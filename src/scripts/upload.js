@@ -222,12 +222,12 @@ const refreshPage = async () => {
 }
 
 const removeStoreStatus = async () => {
-    await DataStore.setFileData([]);
-    await DataStore.setFileName(null);
-    await DataStore.setScreenTableName([]);
-    await DataStore.setAttendTableName([]);
-    await DataStore.setUploadStatus(false);
-    await ScreenStore.setUploadStatus(false);
+    // await DataStore.setFileData([]);
+    // await DataStore.setFileName(null);
+    // await DataStore.setScreenTableName([]);
+    // await DataStore.setAttendTableName([]);
+    // await DataStore.setUploadStatus(false);
+    // await ScreenStore.setUploadStatus(false);
 }
 
 export default { handleFileUpload, addChiDao, addKuangke, addQianDao, addQingJia, serveData, signAll, refreshPage, removeStoreStatus }

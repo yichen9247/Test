@@ -20,7 +20,6 @@
         <el-container>
             <HeadView />
             <IndexView v-if="UIStore.headSelect == 0" />
-            
         </el-container>
     </div>
 </template>
