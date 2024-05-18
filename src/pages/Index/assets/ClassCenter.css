@@ -16,46 +16,19 @@ div.page-container ul.class-list {
 }
 div.page-container ul.class-list li.class-list-item {
   width: 45%;
-  height: 5.3125rem;
+  height: 10%;
   cursor: pointer;
-  font-size: 2.25rem;
+  font-size: 1.6vw;
   color: #ffffff;
-  line-height: 5.3125rem;
   overflow: hidden;
-  text-align: center;
-  border-radius: 0.5rem;
+  display: flex;
+  margin-bottom: 5%;
   white-space: nowrap;
-  margin-bottom: 5rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  justify-content: center;
   background-color: rgba(255, 255, 255, 0.35);
 }
 div.page-container ul.class-list li.class-list-item:last-child {
   margin-bottom: 0;
-}
-@media screen and (max-width: 768px) {
-  ul.class-list {
-    flex-direction: column-reverse;
-  }
-  ul.class-list li.class-list-item {
-    width: 60%;
-    height: 3.75rem;
-    font-size: 1.5rem;
-    line-height: 3.75rem;
-    margin-bottom: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-}
-@media screen and (max-width: 480px) {
-  ul.class-list {
-    margin-bottom: 0;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  ul.class-list li.class-list-item {
-    width: 90%;
-    height: 2.5rem;
-    font-size: 1rem;
-    margin-bottom: 0;
-    line-height: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
 }

@@ -14,24 +14,13 @@ div.screen-container div#effect {
   z-index: -1;
   background-color: transparent;
 }
-div.screen-container img.line {
-  left: 50%;
-  top: 5.6563rem;
-  z-index: 1;
-  width: 94.6%;
-  right: 50%;
-  height: 3.4375rem;
-  object-fit: cover;
-  position: absolute;
-  transform: translateX(-50%);
-}
 div.screen-container div.main-head {
-  height: 6.25rem;
+  height: 10vh;
   display: flex;
-  padding: 0.625rem 0.9375rem;
   position: relative;
+  padding: 1vh 0.5vw;
   align-items: center;
-  width: calc(100% - 1.875rem);
+  width: calc(100% - 1vw);
   justify-content: flex-end;
 }
 div.screen-container div.main-head div.title-box {
@@ -45,13 +34,12 @@ div.screen-container div.main-head div.title-box img.title-img {
   position: absolute;
 }
 div.screen-container div.main-head div.title-box span.site-title {
-  font-size: 1.875rem;
-  margin-top: -0.1875rem;
+  font-size: 1.4vw;
   display: flex;
-  margin-left: 3.75rem;
   color: #0EFFFF;
   font-weight: bold;
   align-items: center;
+  margin-left: 3.75rem;
 }
 div.screen-container div.main-head div.title-box span.site-desc {
   font-size: 1.5rem;
@@ -60,33 +48,35 @@ div.screen-container div.main-head div.title-box span.site-desc {
 }
 div.screen-container div.main-head div.head-container {
   width: 97%;
-  height: 100%;
+  height: 10vh;
   margin: 0 auto;
   display: flex;
+  overflow: hidden;
   align-items: center;
   justify-content: space-between;
   border-bottom: 6px solid #0083EE;
 }
 div.screen-container div.main-head div.head-box {
-  width: 12.5rem;
-  height: 3.6875rem;
-  padding: 0 0.9375rem;
+  width: 10vw;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75vw;
   margin-left: 2.8125rem;
   border-radius: 0.3125rem;
+  justify-content: space-between;
   border: 0.3125rem solid #0083EE;
   background-color: rgba(255, 255, 255, 0.25);
 }
 div.screen-container div.main-head div.head-box span.title {
-  font-size: 1.5rem;
   color: #0EFFFF;
-  line-height: 4.0625rem;
+  font-size: 1.24vw;
 }
 div.screen-container div.main-head div.head-box span.number {
   float: right;
-  font-size: 1.5rem;
+  font-size: 1.24vw;
   color: #ffffff;
   font-weight: bold;
-  line-height: 4.0625rem;
 }
 div.screen-container div.info-box {
   width: auto!important;
@@ -101,8 +91,9 @@ div.screen-container div.main-body {
 }
 div.screen-container div.main-body div.body-line {
   height: 50%;
-  width: 100%;
+  padding: 0 1vw;
   display: flex;
+  width: calc(100% - 2vw);
   justify-content: space-between;
 }
 div.screen-container div.main-body div.body-line div.line-container {
@@ -111,14 +102,17 @@ div.screen-container div.main-body div.body-line div.line-container {
   display: flex;
 }
 div.screen-container div.main-body div.body-line div.line-container div.list-box {
-  width: 86%;
+  width: 95%;
   height: 90%;
   margin: auto;
 }
 div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-head {
   width: 100%;
-  height: 4.0625rem;
+  height: 6.5vh;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
 div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-head img {
   z-index: -1;
@@ -128,16 +122,15 @@ div.screen-container div.main-body div.body-line div.line-container div.list-box
 }
 div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-head p.head-title {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.3vw;
   text-align: center;
-  line-height: 4.0625rem;
 }
 div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-body {
   width: 100%;
   display: grid;
   overflow: hidden;
   position: relative;
-  height: calc(100% - 4.0625rem);
+  height: calc(100% - 2.8vw);
 }
 div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-body img {
   z-index: -1;
@@ -158,10 +151,10 @@ div.screen-container div.main-body div.body-line div.line-container div.list-box
   overflow-y: scroll;
 }
 div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-body ul.list-box li.list-item {
-  margin: 1.25rem 0;
+  font-size: 1vw;
+  margin: 2vh 0;
   cursor: pointer;
   color: #00c3ff;
-  font-size: 1.25rem;
   text-align: center;
   font-weight: bold;
   letter-spacing: 0.125rem;
