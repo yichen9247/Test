@@ -1,0 +1,198 @@
+div.screen-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+div.screen-container img.main-bg {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+div.screen-container div#effect {
+  z-index: -1;
+  background-color: transparent;
+}
+div.screen-container img.line {
+  left: 50%;
+  top: 90.5px;
+  z-index: 1;
+  width: 94.6%;
+  right: 50%;
+  height: 55px;
+  object-fit: cover;
+  position: absolute;
+  transform: translateX(-50%);
+}
+div.screen-container div.main-head {
+  height: 100px;
+  display: flex;
+  padding: 10px 15px;
+  position: relative;
+  align-items: center;
+  width: calc(100% - 30px);
+  justify-content: flex-end;
+}
+div.screen-container div.main-head div.title-box {
+  left: 70px;
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  align-items: center;
+  white-space: nowrap;
+  padding-bottom: 15px;
+}
+div.screen-container div.main-head div.title-box img.title-img {
+  height: 55px;
+  position: absolute;
+}
+div.screen-container div.main-head div.title-box span.site-title {
+  font-size: 30px;
+  margin-top: -3px;
+  display: flex;
+  margin-left: 60px;
+  color: #0EFFFF;
+  font-weight: bold;
+  align-items: center;
+}
+div.screen-container div.main-head div.title-box span.site-desc {
+  font-size: 24px;
+  color: #ffffff;
+  margin-left: 25px;
+}
+div.screen-container div.main-head div.head-container {
+  display: flex;
+  margin-right: 50px;
+  align-items: center;
+}
+div.screen-container div.main-head div.head-box {
+  width: 200px;
+  height: 59px;
+  padding: 0 15px;
+  margin-left: 45px;
+  border-radius: 5px;
+  border: 5px solid #0083EE;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+div.screen-container div.main-head div.head-box span.title {
+  font-size: 24px;
+  color: #0EFFFF;
+  line-height: 65px;
+}
+div.screen-container div.main-head div.head-box span.number {
+  float: right;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 65px;
+}
+div.screen-container div.info-box {
+  width: auto!important;
+}
+div.screen-container div.info-box span.number {
+  margin-left: 15px;
+  font-weight: unset!important;
+}
+div.screen-container div.main-body {
+  width: 100%;
+  height: calc(100% - 125px);
+}
+div.screen-container div.main-body div.body-line {
+  height: 50%;
+  display: flex;
+  padding: 0 20px;
+  width: calc(100% - 40px);
+  justify-content: space-between;
+}
+div.screen-container div.main-body div.body-line div.line-container {
+  width: 33.33%;
+  height: 100%;
+  display: flex;
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box {
+  width: 85%;
+  height: 85%;
+  margin: auto;
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-head {
+  width: 100%;
+  height: 65px;
+  position: relative;
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-head img {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-head p.head-title {
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  line-height: 65px;
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-body {
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  position: relative;
+  height: calc(100% - 65px);
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-body img {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-body div.canvas-box {
+  width: 100%;
+  height: 90%;
+  margin: auto;
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-body ul.list-box {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+div.screen-container div.main-body div.body-line div.line-container div.list-box div.box-body ul.list-box li.list-item {
+  margin: 20px 0;
+  cursor: pointer;
+  color: #00c3ff;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+div.el-table {
+  --el-table-bg-color: transparent;
+  --el-table-tr-bg-color: transparent;
+  --el-table-border-color: transparent;
+  --el-table-header-bg-color: transparent;
+  --el-table-row-hover-bg-color: transparent;
+}
+div.table {
+  width: 90%!important;
+  height: 90%;
+  margin: auto;
+}
+div.table * {
+  color: #ffffff;
+  text-align: center;
+}
+div.table col {
+  width: 180px!important;
+}
+div.table td,
+div.table tr {
+  width: 180px!important;
+}
+div.table table.el-table__body {
+  margin-top: 10px;
+}
+div.table table.el-table__header,
+div.table table.el-table__body {
+  width: unset!important;
+}

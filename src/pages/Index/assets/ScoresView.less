@@ -1,0 +1,102 @@
+
+div.score-container {
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+    height: calc(100% - 20px);
+
+    div.topbar {
+        height: 60px;
+        padding: 0 10px;
+        display: flex;
+        width: calc(100% - 20px);
+        background-color: #ffffff;
+        justify-content: space-between;
+        border-bottom: 1px solid #dddddd;
+
+        div.bar-box {
+            display: flex;
+
+            div.icon-box {
+                width: 60px;
+                height: 60px;
+                display: grid;
+    
+                i,svg {
+                    width: 28px;
+                    height: 28px;
+                    margin: auto;
+                    color: #545c64;
+                }
+
+                a {
+                    color: #545c64;
+                    line-height: 60px;
+                }
+            }
+        }
+
+        span.title {
+            line-height: 60px;
+        }
+    }
+
+    div.table {
+        width: 1400px;
+        margin-top: 35px;
+        margin: 20px auto;
+        animation: artice 0.3s;
+
+        * {
+            animation: artice 0.3s;
+        }
+
+        thead {
+        
+            tr {
+                height: 60px;
+                th {
+                    font-size: 16px;
+                    background-color: #F2F3F5;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                height: 50px;  
+                th {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+button.send {
+    height: 55px;
+    width: 1400px;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto;
+}
+
+div.upload-boxS {
+    width: 1400px;
+    overflow: hidden;
+    position: relative;
+    margin: 25px auto;
+
+    input[type="file"] {
+        top: 0;
+        right: 0;
+        opacity: 0;
+        font-size: 100px;
+        position: absolute;
+    }
+
+    button {
+        margin: 0;
+    }
+}

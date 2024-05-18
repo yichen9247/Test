@@ -1,0 +1,109 @@
+
+div.student-container {
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+    height: calc(100% - 20px);
+
+    div.topbar {
+        height: 60px;
+        padding: 0 10px;
+        display: flex;
+        width: calc(100% - 20px);
+        background-color: #ffffff;
+        justify-content: space-between;
+        border-bottom: 1px solid #dddddd;
+
+        div.bar-box {
+            display: flex;
+
+            div.icon-box {
+                width: 60px;
+                height: 60px;
+                display: grid;
+    
+                i,svg {
+                    width: 28px;
+                    height: 28px;
+                    margin: auto;
+                    color: #545c64;
+                }
+
+                a {
+                    color: #545c64;
+                    line-height: 60px;
+                }
+            }
+        }
+
+        span.title {
+            line-height: 60px;
+        }
+    }
+
+    div.button-sheet {
+        width: 100%;
+        height: 55px;
+        padding: 0 25px;
+        display: flex;
+        margin-top: 15px;
+        align-items: center;
+
+        button {
+            width: 200px;
+            height: 45px;
+            font-size: 16px;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        div.upload-box {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+
+            input[type="file"] {
+                top: 0;
+                right: 0;
+                opacity: 0;
+                font-size: 100px;
+                position: absolute;
+            }
+        }
+    }
+
+    div.table {
+        margin: 20px auto;
+        width: calc(100% - 50px);
+        animation: artice 0.3s;
+
+        * {
+            animation: artice 0.3s;
+        }
+
+        thead {
+        
+            tr {
+                height: 60px;
+                th {
+                    font-size: 16px;
+                    background-color: #F2F3F5;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                height: 50px;  
+                th {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.el-table td.el-table__cell, .el-table th.el-table__cell.is-leaf {
+    text-align: center;
+}

@@ -1,0 +1,225 @@
+
+div.task-container {
+    width: 100%;
+    height: calc(100%);
+
+    img.main-bg {
+        z-index: -9;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        filter: brightness(0.75) contrast(1.2);
+    }
+
+    div.container-header {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 80%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("../../../assets/image/title_bg.png");
+        }
+
+        &::before {
+            top: 2px;
+            left: 50%;
+            right: 50%;
+            transform: translateX(-50%);
+        }
+
+        p.title {
+            font-size: 36px;
+            color: #0EFFFF;
+            font-weight: 700;
+            text-align: center;
+            line-height: 100px;
+            letter-spacing: 0.1em;
+        }
+    }
+
+    div.container-body {
+        width: 97%;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 35px;
+        height: calc(100% - 135px);
+        justify-content: space-between;
+
+        div.body-left {
+            padding: 20px;
+            display: flex;
+            border-radius: 5px;
+            flex-direction: column;
+            width: calc(20% - 100px);
+            height: calc(100% - 70px);
+            border: 2px solid #0EFFFF;
+            min-width: calc(20% - 100px);
+            justify-content: space-between;
+
+            div.action-box {
+                width: 98%;
+                height: 145px;
+                overflow: hidden;
+                border-radius: 5px;
+                border: 2px solid #0EFFFF;
+
+                div.head {
+                    width: 100%;
+                    height: 45px;
+                    border-bottom: 2px solid #0EFFFF;
+
+                    span.name {
+                        display: flex;
+                        color: #0EFFFF;
+                        line-height: 45px;
+                        text-align: center;
+                        align-items: center;
+
+                        &::before {
+                            content: '';
+                            width: 5px;
+                            height: 14px;
+                            display: block;
+                            margin: 0 15px;
+                            background-color: #0EFFFF;
+                        }
+                    }
+                }
+
+                div.body {
+                    width: 100%;
+                    height: 100%;
+
+                    span {
+                        display: block;
+                        margin: 0 auto;
+                        font-size: 28px;
+                        color: #ffffff;
+                        font-weight: bold;
+                        line-height: 100px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            div.button-box {
+                width: 100%;
+                height: 75px;
+                position: relative;
+
+                img.bg {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                }
+
+                span.title {
+                    top: 25px;
+                    left: 165px;
+                    font-size: 18px;
+                    color: #0EFFFF;
+                    position: absolute;
+                }
+            }
+        }
+
+        div.body-right {
+            padding: 20px;
+            margin-left: 35px;
+            border-radius: 5px;
+            width: calc(100% - 50px);
+            height: calc(100% - 70px);
+            border: 2px solid #0EFFFF;
+
+            div.right-box {
+                width: 100%;
+                padding: 10px 0;
+                position: relative;
+                height: calc(100% - 22.5px);
+
+                div.title-box {
+                    width: 97.8%;
+                    height: 145px;
+                    margin: 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    span.title {
+                        font-size: 38px;
+                        color: #0EFFFF;
+                        letter-spacing: 0.05em;
+                    }
+                }
+
+                div.content-box {
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    overflow: hidden;
+                    position: absolute;
+                    overflow-y: scroll;
+
+                    div.list-box {
+                        width: 100%;
+                        margin: auto;
+                        
+
+                        div.el-space {
+                            justify-content: center;
+                        }
+
+                        div.list-item {
+                            width: 330px;
+                            height: 135px;
+                            border-radius: 5px;
+                            position: relative;
+                            margin-bottom: 20px;
+                            border: 2px solid #0EFFFF;
+                            background-color: rgba(15, 255, 255,0.15);
+
+                            img.bg {
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                            }
+
+                            div.box {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                position: absolute;
+                                align-items: center;
+                                justify-content: center;
+
+                                span.name {
+                                    font-size: 24px;
+                                    color: #ffffff;
+                                    font-weight: 700;
+                                }
+    
+                                svg {
+                                    width: 38px;
+                                    height: 38px;
+                                    margin-top: 1px;
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
