@@ -42,7 +42,7 @@ div.screen-container div.main-head div.title-box span.site-title {
   margin-left: 3.75rem;
 }
 div.screen-container div.main-head div.title-box span.site-desc {
-  font-size: 1.5rem;
+  font-size: 1.24vw;
   color: #ffffff;
   margin-left: 1.5625rem;
 }
@@ -87,7 +87,7 @@ div.screen-container div.info-box span.number {
 }
 div.screen-container div.main-body {
   width: 100%;
-  height: calc(100% - 7.8125rem);
+  height: calc(100% - 12.5vh);
 }
 div.screen-container div.main-body div.body-line {
   height: 50%;
