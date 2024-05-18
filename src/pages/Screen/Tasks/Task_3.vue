@@ -448,21 +448,22 @@
                     <span class="site-title">{{ UIStore.siteTitles }}</span>
                     <span class="site-desc">个人增值</span>
                 </div>
-                <div class="head-box info-box">
-                    <span class="title">姓名</span>
-                    <span class="number">{{ studentInfo.na }}</span>
-                </div>
-                <div class="head-box info-box">
-                    <span class="title">学号</span>
-                    <span class="number">{{ studentInfo.id }}</span>
-                </div>
-                <div class="head-box info-box">
-                    <span class="title">班级</span>
-                    <span class="number">{{ studentInfo.ba }}</span>
+                <div style="display: flex;">
+                    <div class="head-box info-box">
+                        <span class="title">姓名</span>
+                        <span class="number">{{ studentInfo.na }}</span>
+                    </div>
+                    <div class="head-box info-box">
+                        <span class="title">学号</span>
+                        <span class="number">{{ studentInfo.id }}</span>
+                    </div>
+                    <div class="head-box info-box">
+                        <span class="title">班级</span>
+                        <span class="number">{{ studentInfo.ba }}</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <img class="line" src="../../../assets/image/bottom.png" alt="" draggable="false">
 
         <div class="main-body">
             <div class="body-line">

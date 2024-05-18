@@ -401,13 +401,14 @@
                     <span class="site-title">{{ UIStore.siteTitles }}</span>
                     <span class="site-desc">小组增值&nbsp;&nbsp;&nbsp;{{ ScreenStore.groupList[Number(id.someProp) - 1] }}</span>
                 </div>
-                <div class="head-box" v-for="(item,key) in AttendanceHeadRef" :key="key" v-if="AttendanceDataRef != null">
-                    <span class="title">{{ item }}</span>
-                    <span class="number">{{ AttendanceDataRef[key] }}</span>
+                <div style="display: flex;">
+                    <div class="head-box" v-for="(item,key) in AttendanceHeadRef" :key="key" v-if="AttendanceDataRef != null">
+                        <span class="title">{{ item }}</span>
+                        <span class="number">{{ AttendanceDataRef[key] }}</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <img class="line" src="../../../assets/image/bottom.png" alt="" draggable="false">
 
         <div class="main-body">
             <div class="body-line">

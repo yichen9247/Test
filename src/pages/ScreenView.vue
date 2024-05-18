@@ -1,6 +1,6 @@
 
 <script setup>
-    import "@/scripts/canvas.js"
+    // import "@/scripts/canvas.js"
     import "./assets/ScreenView.css"
     import { onMounted, ref } from "vue"
     import Item_1 from "./Screen/Item_1.vue"
@@ -16,11 +16,6 @@
     import Task_1 from "./Screen/Tasks/Task_1.vue"
     import Task_2 from "./Screen/Tasks/Task_2.vue"
     import Task_3 from "./Screen/Tasks/Task_3.vue"
-    import Task_4 from "./Screen/Tasks/Task_4.vue"
-    import Task_5 from "./Screen/Tasks/Task_5.vue"
-    import Task_6 from "./Screen/Tasks/Task_6.vue"
-    import Task_7 from "./Screen/Tasks/Task_7.vue"
-    import Task_8 from "./Screen/Tasks/Task_8.vue"
     
     import { useUIStore } from '@/stores/UIStore.js'
 

@@ -39,13 +39,10 @@ div.screen-container {
         justify-content: flex-end;
 
         div.title-box {
-            left: 4.375rem;
             display: flex;
             cursor: pointer;
-            position: absolute;
             align-items: center;
             white-space: nowrap;
-            padding-bottom: 0.9375rem;
 
             img.title-img {
                 height: 3.4375rem;
@@ -70,9 +67,13 @@ div.screen-container {
         }
         
         div.head-container {
+            width: 97%;
+            height: 100%;
+            margin: 0 auto;
             display: flex;
-            margin-right: 3.125rem;
             align-items: center;
+            justify-content: space-between;
+            border-bottom: 6px solid #0083EE;
         }
 
         div.head-box {
@@ -115,9 +116,8 @@ div.screen-container {
 
         div.body-line {
             height: 50%;
+            width: 100%;
             display: flex;
-            padding: 0 1.25rem;
-            width: calc(100% - 2.5rem);
             justify-content: space-between;
 
             div.line-container {
@@ -126,8 +126,8 @@ div.screen-container {
                 display: flex;
 
                 div.list-box {
-                    width: 85%;
-                    height: 85%;
+                    width: 86%;
+                    height: 90%;
                     margin: auto;
 
                     div.box-head {

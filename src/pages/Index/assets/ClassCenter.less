@@ -35,3 +35,35 @@ div.page-container {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    ul.class-list {
+        flex-direction: column-reverse;
+
+        li.class-list-item {
+            width: 60%;
+            height: 3.75rem;
+            font-size: 1.5rem;
+            line-height: 3.75rem;
+            margin-bottom: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    ul.class-list {
+        margin-bottom: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        li.class-list-item {
+            width: 90%;
+            height: 2.5rem;
+            font-size: 1rem;
+            margin-bottom: 0;
+            line-height: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    }
+}
