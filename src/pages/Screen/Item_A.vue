@@ -430,7 +430,7 @@
                     <span class="site-title">{{ UIStore.siteTitles }}</span>
                     <span class="site-desc">整体分析&nbsp;&nbsp;&nbsp;{{ ScreenStore.taskList.find(item => item.id == Number(id.someProp)).name }}</span>
                 </div>
-                <div class="head-box" v-for="(item,key) in AttendanceHeadRef" :key="key">
+                <div class="head-box" v-for="(item,key) in AttendanceHeadRef" :key="key" v-if="AttendanceDataRef != null">
                     <span class="title">{{ item }}</span>
                     <span class="number">{{ AttendanceDataRef[key] }}</span>
                 </div>
