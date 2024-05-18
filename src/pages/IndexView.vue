@@ -12,7 +12,7 @@
     import ClassInfois from "./Index/ClassInfois.vue"
     import { School, MessageBox, PieChart, Reading, Refrigerator, Coin } from '@element-plus/icons-vue'
 
-    const selected = ref(5);
+    const selected = ref(1);
     const UIStore = useUIStore();
     const menuSelect = async (key, keyPath) => selected.value = key;
     onUnmounted(async () => await UIStore.setIsCollapse(false));
