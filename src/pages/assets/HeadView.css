@@ -1,7 +1,7 @@
 header.el-header {
   padding: 0;
   width: 100%;
-  height: 85px;
+  height: 5.3125rem;
   display: flex;
   position: relative;
   background-color: #545c64;
@@ -12,14 +12,14 @@ header.el-header * {
 }
 header.el-header div.title-box {
   z-index: 20;
-  width: 280px;
+  width: 17.5rem;
   height: 100%;
   display: flex;
   background-color: #545c64;
 }
 header.el-header div.title-box span.title {
   margin: auto;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #ffffff;
 }
 header.el-header div.tabs-box {
@@ -27,7 +27,7 @@ header.el-header div.tabs-box {
   right: 50%;
   z-index: 10;
   height: 100%;
-  width: 500px;
+  width: 31.25rem;
   display: flex;
   position: absolute;
   align-items: center;
@@ -36,12 +36,12 @@ header.el-header div.tabs-box {
   background-color: #545c64;
 }
 header.el-header div.tabs-box a.tab {
-  margin: 0 20px;
-  font-size: 20px;
+  margin: 0 1.25rem;
+  font-size: 1.25rem;
   color: #ffffff;
   transition: 0.3s;
-  border-radius: 8px;
-  padding: 10px 20px;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
   white-space: nowrap;
   background-color: transparent;
 }
@@ -53,7 +53,7 @@ header.el-header div.tabs-box a.tab.active {
 }
 header.el-header div.right-box {
   z-index: 20;
-  width: 275px;
+  width: 17.1875rem;
   height: 100%;
   display: flex;
   background-color: #545c64;
@@ -61,5 +61,5 @@ header.el-header div.right-box {
 header.el-header div.right-box a {
   margin: auto;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 1.125rem;
 }

@@ -15,34 +15,34 @@
   top: 0;
   right: 100%;
   width: 100%;
-  height: 2px;
+  height: 0.125rem;
 }
 .pace .pace-progress-inner {
   display: block;
   position: absolute;
-  right: 0px;
-  width: 100px;
+  right: 0rem;
+  width: 6.25rem;
   height: 100%;
-  box-shadow: 0 0 10px var(--dominColor), 0 0 5px var(--dominColor);
+  box-shadow: 0 0 0.625rem var(--dominColor), 0 0 0.3125rem var(--dominColor);
   opacity: 1;
-  -webkit-transform: rotate(3deg) translate(0px, -4px);
-  -moz-transform: rotate(3deg) translate(0px, -4px);
-  -ms-transform: rotate(3deg) translate(0px, -4px);
-  -o-transform: rotate(3deg) translate(0px, -4px);
-  transform: rotate(3deg) translate(0px, -4px);
+  -webkit-transform: rotate(3deg) translate(0rem, -0.25rem);
+  -moz-transform: rotate(3deg) translate(0rem, -0.25rem);
+  -ms-transform: rotate(3deg) translate(0rem, -0.25rem);
+  -o-transform: rotate(3deg) translate(0rem, -0.25rem);
+  transform: rotate(3deg) translate(0rem, -0.25rem);
 }
 .pace .pace-activity {
   display: block;
   position: fixed;
   z-index: 2000;
-  top: 15px;
-  right: 15px;
-  width: 14px;
-  height: 14px;
-  border: solid 2px transparent;
+  top: 0.9375rem;
+  right: 0.9375rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: solid 0.125rem transparent;
   border-top-color: var(--dominColor);
   border-left-color: var(--dominColor);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   -webkit-animation: pace-spinner 400ms linear infinite;
   -moz-animation: pace-spinner 400ms linear infinite;
   -ms-animation: pace-spinner 400ms linear infinite;

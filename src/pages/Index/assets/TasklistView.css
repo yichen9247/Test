@@ -12,7 +12,7 @@ div.task-container img.main-bg {
 }
 div.task-container div.container-header {
   width: 100%;
-  height: 100px;
+  height: 6.25rem;
   overflow: hidden;
   position: relative;
 }
@@ -28,63 +28,63 @@ div.task-container div.container-header::before {
   background-image: url("../../../assets/image/title_bg.png");
 }
 div.task-container div.container-header::before {
-  top: 2px;
+  top: 0.125rem;
   left: 50%;
   right: 50%;
   transform: translateX(-50%);
 }
 div.task-container div.container-header p.title {
-  font-size: 36px;
+  font-size: 2.25rem;
   color: #0EFFFF;
   font-weight: 700;
   text-align: center;
-  line-height: 100px;
+  line-height: 6.25rem;
   letter-spacing: 0.1em;
 }
 div.task-container div.container-body {
   width: 97%;
   margin: 0 auto;
   display: flex;
-  margin-top: 35px;
-  height: calc(100% - 135px);
+  margin-top: 2.1875rem;
+  height: calc(100% - 8.4375rem);
   justify-content: space-between;
 }
 div.task-container div.container-body div.body-left {
-  padding: 20px;
+  padding: 1.25rem;
   display: flex;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   flex-direction: column;
-  width: calc(20% - 100px);
-  height: calc(100% - 70px);
-  border: 2px solid #0EFFFF;
-  min-width: calc(20% - 100px);
+  width: calc(20% - 6.25rem);
+  height: calc(100% - 4.375rem);
+  border: 0.125rem solid #0EFFFF;
+  min-width: calc(20% - 6.25rem);
   justify-content: space-between;
 }
 div.task-container div.container-body div.body-left div.action-box {
   width: 98%;
-  height: 145px;
+  height: 9.0625rem;
   overflow: hidden;
-  border-radius: 5px;
-  border: 2px solid #0EFFFF;
+  border-radius: 0.3125rem;
+  border: 0.125rem solid #0EFFFF;
 }
 div.task-container div.container-body div.body-left div.action-box div.head {
   width: 100%;
-  height: 45px;
-  border-bottom: 2px solid #0EFFFF;
+  height: 2.8125rem;
+  border-bottom: 0.125rem solid #0EFFFF;
 }
 div.task-container div.container-body div.body-left div.action-box div.head span.name {
   display: flex;
   color: #0EFFFF;
-  line-height: 45px;
+  line-height: 2.8125rem;
   text-align: center;
   align-items: center;
 }
 div.task-container div.container-body div.body-left div.action-box div.head span.name::before {
   content: '';
-  width: 5px;
-  height: 14px;
+  width: 0.3125rem;
+  height: 0.875rem;
   display: block;
-  margin: 0 15px;
+  margin: 0 0.9375rem;
   background-color: #0EFFFF;
 }
 div.task-container div.container-body div.body-left div.action-box div.body {
@@ -94,15 +94,15 @@ div.task-container div.container-body div.body-left div.action-box div.body {
 div.task-container div.container-body div.body-left div.action-box div.body span {
   display: block;
   margin: 0 auto;
-  font-size: 28px;
+  font-size: 1.75rem;
   color: #ffffff;
   font-weight: bold;
-  line-height: 100px;
+  line-height: 6.25rem;
   text-align: center;
 }
 div.task-container div.container-body div.body-left div.button-box {
   width: 100%;
-  height: 75px;
+  height: 4.6875rem;
   position: relative;
 }
 div.task-container div.container-body div.body-left div.button-box img.bg {
@@ -111,36 +111,36 @@ div.task-container div.container-body div.body-left div.button-box img.bg {
   position: absolute;
 }
 div.task-container div.container-body div.body-left div.button-box span.title {
-  top: 25px;
-  left: 165px;
-  font-size: 18px;
+  top: 1.5625rem;
+  left: 10.3125rem;
+  font-size: 1.125rem;
   color: #0EFFFF;
   position: absolute;
 }
 div.task-container div.container-body div.body-right {
-  padding: 20px;
-  margin-left: 35px;
-  border-radius: 5px;
-  width: calc(100% - 50px);
-  height: calc(100% - 70px);
-  border: 2px solid #0EFFFF;
+  padding: 1.25rem;
+  margin-left: 2.1875rem;
+  border-radius: 0.3125rem;
+  width: calc(100% - 3.125rem);
+  height: calc(100% - 4.375rem);
+  border: 0.125rem solid #0EFFFF;
 }
 div.task-container div.container-body div.body-right div.right-box {
   width: 100%;
-  padding: 10px 0;
+  padding: 0.625rem 0;
   position: relative;
-  height: calc(100% - 22.5px);
+  height: calc(100% - 1.4063rem);
 }
 div.task-container div.container-body div.body-right div.right-box div.title-box {
   width: 97.8%;
-  height: 145px;
+  height: 9.0625rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 div.task-container div.container-body div.body-right div.right-box div.title-box span.title {
-  font-size: 38px;
+  font-size: 2.375rem;
   color: #0EFFFF;
   letter-spacing: 0.05em;
 }
@@ -161,12 +161,12 @@ div.task-container div.container-body div.body-right div.right-box div.content-b
   justify-content: center;
 }
 div.task-container div.container-body div.body-right div.right-box div.content-box div.list-box div.list-item {
-  width: 330px;
-  height: 135px;
-  border-radius: 5px;
+  width: 20.625rem;
+  height: 8.4375rem;
+  border-radius: 0.3125rem;
   position: relative;
-  margin-bottom: 20px;
-  border: 2px solid #0EFFFF;
+  margin-bottom: 1.25rem;
+  border: 0.125rem solid #0EFFFF;
   background-color: rgba(15, 255, 255, 0.15);
 }
 div.task-container div.container-body div.body-right div.right-box div.content-box div.list-box div.list-item img.bg {
@@ -183,13 +183,13 @@ div.task-container div.container-body div.body-right div.right-box div.content-b
   justify-content: center;
 }
 div.task-container div.container-body div.body-right div.right-box div.content-box div.list-box div.list-item div.box span.name {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #ffffff;
   font-weight: 700;
 }
 div.task-container div.container-body div.body-right div.right-box div.content-box div.list-box div.list-item div.box svg {
-  width: 38px;
-  height: 38px;
-  margin-top: 1px;
-  margin-right: 20px;
+  width: 2.375rem;
+  height: 2.375rem;
+  margin-top: 0.0625rem;
+  margin-right: 1.25rem;
 }
