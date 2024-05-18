@@ -11,6 +11,7 @@ body {
   width: 100vw;
   height: 100%;
   overflow: hidden;
+  font-size: 16px;
 }
 :root {
   --dominColor: #79bbff;
@@ -40,5 +41,11 @@ ul li {
   }
   100% {
     opacity: 1;
+  }
+}
+/* 屏幕宽度小于600px时的样式 */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
   }
 }
