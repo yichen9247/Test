@@ -47,7 +47,7 @@
                         <el-icon><PieChart /></el-icon>
                         <span>学情管理</span>
                     </template>
-                    <el-menu-item-group>
+                    <el-menu-item-group class="item-group">
                         <el-menu-item index="6-1">预检IACC系统不响应</el-menu-item>
                         <el-menu-item index="6-2">检测IACC电路及通讯故障</el-menu-item>
                         <el-menu-item index="6-3">维修IACC电路及通讯故障</el-menu-item>
@@ -82,6 +82,10 @@
 }
 
 .el-sub-menu__title {
-    font-size: 18px;
+    font-size: 18px!important;
+}
+
+.item-group .el-menu-item {
+    font-size: 16px!important;
 }
 </style>
