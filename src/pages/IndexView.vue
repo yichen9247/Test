@@ -75,17 +75,17 @@
 
 <style>
 .el-menu-vertical:not(.el-menu--collapse) {
-    width: 280px;
-    min-width: 280px;
-    min-height: 400px;
-    overflow-y: scroll
+    width: 17.5rem;
+    min-width: 17.5rem;
+    min-height: 25rem;
+    overflow-y: scroll;
 }
 
 .el-sub-menu__title {
-    font-size: 18px!important;
+    font-size: 1.125rem!important;
 }
 
 .item-group .el-menu-item {
-    font-size: 16px!important;
+    font-size: 1rem!important;
 }
 </style>
