@@ -1,0 +1,186 @@
+
+body {
+    font-size: 12px;
+    background-color: #06164A;
+}
+
+header {
+    height: 10vh;
+    color: #81E7ED;
+    font-size: 1.25vw;
+    text-align: center;
+
+    h1 {
+        line-height: 10vh;
+    }
+
+}
+
+section {
+    padding: 1vh 1vw;
+    display: flex;
+    width: calc(100% - 2vw);
+    height: calc(100% - 13vh);
+    justify-content: space-between;
+
+    div.column {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:nth-child(2) {
+            width: 48%;
+        }
+
+        div.flex {
+            width: 100%;
+            height: 48%;
+            position: relative;
+
+            div.panelx {
+                width: 48.8%;
+                height: 100%;
+                position: relative;
+                display: inline-block;
+                border: 1px solid rgba(25, 186, 139, 0.17);
+                background-color: rgba(255, 255, 255, 0.04);
+
+                &:nth-child(2) {
+                    float: right;
+                }
+
+                &::before {
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 20%;
+                    position: absolute;
+                    border-top: 2px solid #02a6b5;
+                    border-left: 2px solid #02a6b5;
+                }
+
+                &::after {
+                    top: 0;
+                    right: 0;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 20%;
+                    position: absolute;
+                    border-top: 2px solid #02a6b5;
+                    border-right: 2px solid #02a6b5;
+                }
+            }
+        }
+
+        div.panel {
+            width: 100%;
+            height: 48%;
+            position: relative;
+            border: 1px solid rgba(25, 186, 139, 0.17);
+            background-color: rgba(255, 255, 255, 0.04);
+
+            &::before {
+                top: 0;
+                left: 0;
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-radius: 20%;
+                position: absolute;
+                border-top: 2px solid #02a6b5;
+                border-left: 2px solid #02a6b5;
+            }
+
+            &::after {
+                top: 0;
+                right: 0;
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-radius: 20%;
+                position: absolute;
+                border-top: 2px solid #02a6b5;
+                border-right: 2px solid #02a6b5;
+            }
+        }
+
+        div.panel-footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            position: absolute;
+
+            &::before {
+                left: 0;
+                bottom: 0;
+                content: "";
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                border-radius: 20%;
+                border-left: 2px solid #02a6b5;
+                border-bottom: 2px solid #02a6b5;
+            }
+
+            &::after {
+                right: 0;
+                bottom: 0;
+                content: "";
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                border-radius: 20%;
+                border-right: 2px solid #02a6b5;
+                border-bottom: 2px solid #02a6b5;
+            }
+        }
+
+        div.panel,div.panelx {
+            overflow: hidden;
+
+            h2 {
+                margin: 1vh 0;
+                font-size: 1.2vw;
+                color: #81E7ED;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            div.canvas {
+                width: 100%;
+                height: calc(100% - 3vh);
+            }
+
+            div.image-box {
+                width: 100%;
+                height: 55%;
+                margin: 1vh 0;
+                display: flex;
+
+                svg {
+                    width: 80%;
+                    height: 80%;
+                    margin: auto;
+                }
+            }
+
+            p.user-name {
+                font-size: 1vw;
+                color: #ffeb7b;
+                text-align: center;
+            }
+
+            p.user-desc {
+                margin: 2vh 0;
+                font-size: 1vw;
+                color: #ffeb7b;
+                text-align: center;
+            }
+        }
+    }
+}

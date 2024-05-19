@@ -81,8 +81,12 @@
     overflow-y: scroll;
 }
 
+.el-menu-item {
+    font-size: 1.0625rem!important;
+}
+
 .el-sub-menu__title {
-    font-size: 1.125rem!important;
+    font-size: 1.0625rem!important;
 }
 
 .item-group .el-menu-item {

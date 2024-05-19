@@ -34,6 +34,12 @@
             open(`/screen?id=T-3&key=${id.id}`);
         } else ElMessage({type: 'warning',message: "请先上传数据！"});
     }
+
+    const readStudentDraws = async (id) => {
+        if (DataStore.uploadStatus) {
+            open(`/person?key=${id.id}`);
+        } else ElMessage({type: 'warning',message: "请先上传数据！"});
+    }
 </script>
 
 <template>
@@ -72,10 +78,11 @@
 
         <el-table :data="DataStore.fileData" class="table" border>
             <el-table-column v-for="(item,key) in DataStore.screenTableName" :key="key" :label="item[Object.keys(item)]" :prop="Object.keys(item)[0]"/>
-            <el-table-column label="操作" width="280" v-if="DataStore.uploadStatus">
+            <el-table-column label="操作" width="360" v-if="DataStore.uploadStatus">
                 <template #default="scope" >
                     <el-button size="small" type="success" @click="readStudentInfo(scope.row)">查看学习情况</el-button>
-                    <el-button size="small" type="primary" @click="readStudentTotal(scope.row)">查看增值</el-button>
+                    <el-button size="small" type="warning" @click="readStudentTotal(scope.row)">查看增值</el-button>
+                    <el-button size="small" type="primary" @click="readStudentDraws(scope.row)">查看能力画像</el-button>
                 </template>
               </el-table-column>
         </el-table>

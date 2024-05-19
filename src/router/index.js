@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/task',
       name: 'task',
       component: () => import("@/pages/Index/TasklistView.vue")
+    },
+    {
+      path: '/person',
+      name: 'person',
+      component: () => import("@/pages/Person/Index.vue")
     }
   ]
 })
