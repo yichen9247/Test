@@ -492,7 +492,7 @@
                     <div class="panel-footer"></div>
                 </div>
                 <div class="panel piel">
-                    <h2>适应能力情况</h2>
+                    <h2>适应能力</h2>
                     <div class="canvas canvas-six"></div>
                     <div class="panel-footer"></div>
                 </div>

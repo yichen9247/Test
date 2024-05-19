@@ -9,16 +9,16 @@
     const password = ref('');
     const UIStore = useUIStore();
     
-    const loginCheck = async () => {
+    const loginCheck = () => {
         if (username.value == '' || password.value == '') {
-           await ElMessage({ message: '请输入账号或者密码！', type: 'warning', plain: true});
+            ElMessage({ message: '请输入账号或者密码！', type: 'warning', plain: true});
         } else {
             if (username.value == 'admin' && password.value == '12345678') {
                 localStorage.setItem('nick','Admin');
                 localStorage.setItem('login','true');
                 setTimeout(() => router.push('../'),1000);
-                await ElMessage({ message: '登录成功！', type: 'success', plain: true});
-            } else await ElMessage({ message: '账号或密码错误！', type: 'error', plain: true});
+                 ElMessage({ message: '登录成功！', type: 'success', plain: true});
+            } else  ElMessage({ message: '账号或密码错误！', type: 'error', plain: true});
         }
     }
 
@@ -28,7 +28,7 @@
             confirmButtonText: '确认',
         });
     });
-    const forgetPassword = async () => await ElMessage({ message: '请联系平台管理人员！', type: 'info', plain: true});
+    const forgetPassword =  () =>  ElMessage({ message: '请联系平台管理人员！', type: 'info', plain: true});
 </script>
 
 <template>

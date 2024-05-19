@@ -9,6 +9,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   build: {
     assetsDir: 'assets', // 静态资源目录
   },
