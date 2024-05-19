@@ -379,8 +379,8 @@
 
         const option = {
             legend: {
+                top: '5%',
                 left: 'center',
-                bottom: '0%',
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
