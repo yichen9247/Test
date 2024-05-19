@@ -1,17 +1,24 @@
 
-body {
+div.screen-pro-container {
+    width: 100%;
+    height: 100%;
     font-size: 12px;
+    overflow: hidden;
     background-color: #06164A;
-}
+    
+    header {
+        height: 10vh;
+        color: #81E7ED;
+        font-size: 1.25vw;
+        text-align: center;
+    
+        h1 {
+            line-height: 10vh;
 
-header {
-    height: 10vh;
-    color: #81E7ED;
-    font-size: 1.25vw;
-    text-align: center;
-
-    h1 {
-        line-height: 10vh;
+            span {
+                color: #ffeb7b;
+            }
+        }
     }
 }
 
@@ -23,57 +30,16 @@ section {
     justify-content: space-between;
 
     div.column {
-        width: 25%;
         height: 100%;
+        width: 32.5%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        &:nth-child(2) {
-            width: 48%;
-        }
 
         div.flex {
             width: 100%;
             height: 48%;
             position: relative;
-
-            div.panelx {
-                width: 48.8%;
-                height: 100%;
-                position: relative;
-                display: inline-block;
-                border: 1px solid rgba(25, 186, 139, 0.17);
-                background-color: rgba(255, 255, 255, 0.04);
-
-                &:nth-child(2) {
-                    float: right;
-                }
-
-                &::before {
-                    top: 0;
-                    left: 0;
-                    content: "";
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 20%;
-                    position: absolute;
-                    border-top: 2px solid #02a6b5;
-                    border-left: 2px solid #02a6b5;
-                }
-
-                &::after {
-                    top: 0;
-                    right: 0;
-                    content: "";
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 20%;
-                    position: absolute;
-                    border-top: 2px solid #02a6b5;
-                    border-right: 2px solid #02a6b5;
-                }
-            }
         }
 
         div.panel {

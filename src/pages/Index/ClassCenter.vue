@@ -3,8 +3,6 @@
     import { ref } from "vue";
     import "./assets/ClassCenter.css"
     import { VueDraggable } from 'vue-draggable-plus'
-
-    const taskOne = ref(true);
     const setInfoDialog = (pageId) => open(`../task?id=${pageId}`);
 
     const list = ref([
@@ -17,7 +15,7 @@
     <div class="page-container">
         <ul class="class-list"> 
             <VueDraggable v-model="list" class="drag-container" :animation="300">
-                <li v-for="item in list" :key="list.indexOf(item)" class="class-list-item" @click="setInfoDialog(list.indexOf(item))">{{ list[list.indexOf(item)] }}</li>
+                <li v-for="item in list" :key="list.indexOf(item)" class="class-list-item" @click="setInfoDialog(list.indexOf(item)+1)">{{ list[list.indexOf(item)] }}</li>
             </VueDraggable>
         </ul>
     </div>

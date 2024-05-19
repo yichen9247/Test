@@ -361,11 +361,6 @@
 
     const setEchartsSix = async () => {
         const option = {
-            grid: {
-                left: '8%',
-                right: '4%',
-                bottom: '10%',
-            },
             xAxis: {
                 type: 'category',
                 axisTick: {
