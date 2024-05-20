@@ -1,6 +1,6 @@
 
 <script setup>
-    // import "@/scripts/canvas.js"
+    import "@/scripts/canvas.js"
     import "./assets/ScreenView.css"
     import { onMounted, ref } from "vue"
     import Item_1 from "./Screen/Item_1.vue"
@@ -16,8 +16,6 @@
     import Task_1 from "./Screen/Tasks/Task_1.vue"
     import Task_2 from "./Screen/Tasks/Task_2.vue"
     import Task_3 from "./Screen/Tasks/Task_3.vue"
-
-    import Item_Pro from "./Screen/pro/Item.vue"
     
     import { useUIStore } from '@/stores/UIStore.js'
 
@@ -42,8 +40,6 @@
     <Item_6 v-if="pageId == '6'" />
     <Item_7 v-if="pageId == '7'" />
     <Item_8 v-if="pageId == '8'" />
-
-    <Item_Pro v-if="pageId == 'pro'" />
 
     <Item_P v-if="pageId == 'P'" :id="{ someProp: pageKey }" />
     <Item_A v-if="pageId == 'A'" :id="{ someProp: pageKey }" />
