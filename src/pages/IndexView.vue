@@ -75,8 +75,8 @@
 
 <style>
 .el-menu-vertical:not(.el-menu--collapse) {
-    width: 17.5rem;
-    min-width: 17.5rem;
+    width: 17vw;
+    min-width: 17vw;
     min-height: 25rem;
     overflow-y: scroll;
 }
@@ -90,6 +90,6 @@
 }
 
 .item-group .el-menu-item {
-    font-size: 1rem!important;
+    font-size: 1.85vh!important;
 }
 </style>

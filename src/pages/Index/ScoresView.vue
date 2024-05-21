@@ -143,22 +143,22 @@
         </div>
 
         <el-table :data="socreList" class="table" border>
-            <el-table-column label="评分项" width="280">
+            <el-table-column label="评分项">
                 <template #default="scope" >
                     <el-cascader v-model="socreList[scope.$index].f_value" :options="f_option" />
                 </template>
             </el-table-column>
-            <el-table-column label="任务项" width="280">
+            <el-table-column label="任务项">
                 <template #default="scope" >
                     <el-cascader v-model="socreList[scope.$index].r_value" :options="r_option" />
                 </template>
             </el-table-column>
-            <el-table-column label="子任务" width="280">
+            <el-table-column label="子任务">
                 <template #default="scope" >
                     <el-cascader v-model="socreList[scope.$index].z_value" :options="z_option" />
                 </template>
             </el-table-column>
-            <el-table-column label="评分等级" width="280">
+            <el-table-column label="评分等级">
                 <template #default="scope" >
                     <el-cascader v-model="socreList[scope.$index].p_value" :options="p_grades" />
                 </template>

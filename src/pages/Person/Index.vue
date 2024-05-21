@@ -3,14 +3,11 @@
     import "./assets/Index.css"
     import * as echarts from 'echarts'
     import icons from "@/scripts/icons.js"
-    import random from "@/scripts/random.js"
     import { useUIStore } from '@/stores/UIStore.js'
     import databaseOption from "@/scripts/database.js"
-    import { useScreentore } from "@/stores/ScreenStore"
     import { onBeforeUnmount, onMounted, ref } from "vue"
 
     const UIStore = useUIStore();
-    const ScreenStore = useScreentore();
     let database = databaseOption.screenDatabase;
     let studentDatabase = databaseOption.studentDatabase;
     database.version(1).stores(databaseOption.screenTrees);
@@ -57,6 +54,7 @@
 
     const studentInfo = ref({});
 
+    const ProfileDataRef = ref(null);
     const SkillRankHeadRef = ref(null);
     const SkillRankDataRef = ref(null);
     const AttendanceHeadRef = ref(null);
@@ -90,6 +88,11 @@
         let TaskScoreAnalDataCache = [];
         let GroupScoreRankDataCache = [];
         let AverageScoreRankDataCache = [];
+
+        TaskScoreAnalDatasRef.value = TaskScoreAnalDataCache;
+
+        let ProFileData = await studentDatabase.profileData.toArray();
+        ProfileDataRef.value = ProFileData[0].data;
 
         let SkillRankHead = await database.SkillRankHead.toArray();
         SkillRankHeadRef.value = SkillRankHead[0].data;
@@ -133,12 +136,19 @@
                 value: TaskScoreAnalDatas[0].data[i],
             });
         }
-        TaskScoreAnalDatasRef.value = TaskScoreAnalDataCache;
 
         await setAllCanvas();
     }
 
     const setEchartsOne = async () => {
+        let data = [];
+        for (let i=0;i<8;i++) {
+            data.push({
+                name: ProfileDataRef.value[1][i],
+                value: ProfileDataRef.value[2][i],
+            });
+        }
+
         const option = {
             tooltip: {
                 trigger: 'item'
@@ -163,19 +173,39 @@
                         length2: 40
                     }
                 },
-                data: [
-                    { name: '任务一', value: random.getRandomIntInclusive() },
-                    { name: '任务二', value: random.getRandomIntInclusive() },
-                    { name: '任务三', value: random.getRandomIntInclusive() },
-                    { name: '任务四', value: random.getRandomIntInclusive() },
-                    { name: '任务五', value: random.getRandomIntInclusive() },
-                ],
+                data: data,
             }]
         }
         charts_one.setOption(option);
     }
 
     const setEchartsTwo = async () => {
+        let task = [],head = [],data = [],heads = [];
+        for (let i=9;i<26;i+=8) {
+            head.push(ProfileDataRef.value[1][i]);
+        }
+        for (let i=9;i<17;i++) {
+            heads.push([]);
+            task.push(ProfileDataRef.value[2][i])
+        }
+        for (let i=9,p=0;i<17;i++,p++) {
+            heads[p].push(ProfileDataRef.value[3][i]);
+        }
+        for (let i=17,p=0;i<25;i++,p++) {
+            heads[p].push(ProfileDataRef.value[3][i]);
+        }
+        for (let i=25,p=0;i<33;i++,p++) {
+            heads[p].push(ProfileDataRef.value[3][i]);
+        }
+
+        for(let i=0;i<task.length;i++) {
+            data.push({
+                name: task[i],
+                type: 'line',
+                data: heads[i]
+            });
+        }
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -186,62 +216,38 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['任务一', '任务二', '任务三', '任务四', '任务五']
+                data: task
             },
             xAxis: {
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
                 type: 'category',
-                data: ['知识', '能力', '素养']
+                data: head
             },
             yAxis: {
                 type: 'value',
             },
-            series: [
-                {
-                    name: '任务一',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '任务二',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '任务三',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '任务四',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '任务五',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-            ]
+            series: data
         }
         charts_two.setOption(option);
     }
 
     const setEchartsThree = async () => {
+        let head = [],data = [];
+        for (let i=34;i<39;i++) {
+            head.push({
+                name: ProfileDataRef.value[1][i], max: 100
+            });
+            data.push(ProfileDataRef.value[2][i])
+        }
+
         const option = {
             tooltip: {
                 trigger: 'item'
             },
             radar: {
-                indicator: [
-                    { name: '基础能力', max: 100 },
-                    { name: '专业能力', max: 100 },
-                    { name: '职业素养', max: 100 },
-                    { name: '解决问题能力', max: 100 },
-                    { name: '知识迁移能力', max: 100 },
-                ],
+                indicator: head,
             },
             series: [{
                 name: 'Budget vs spending',
@@ -251,24 +257,7 @@
                     borderRadius: 10,
                     borderColor: '#ffffff'
                 },
-                data: [
-                    {
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                    },{
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                    }
+                data: [{value: data}
                 ]
             }]
         }
@@ -276,9 +265,38 @@
     }
 
     const setEchartsFour = async () => {
+        let task = [],head = [],data = [],heads = [],valu = [];
+        for (let i=40;i<73;i+=8) {
+            heads.push({
+                name: ProfileDataRef.value[1][i],
+                type: 'line',
+                data: []
+            });
+            head.push(ProfileDataRef.value[1][i]);
+        }
+        for (let i=40;i<48;i++) {
+            task.push(ProfileDataRef.value[2][i]);
+        }
+
+        for (let i=40,p=0;i<48;i++,p++) {
+            heads[0].data.push(ProfileDataRef.value[3][i]);
+        }
+        for (let i=48,p=0;i<56;i++,p++) {
+            heads[1].data.push(ProfileDataRef.value[3][i]);
+        }
+        for (let i=56,p=0;i<64;i++,p++) {
+            heads[2].data.push(ProfileDataRef.value[3][i]);
+        }
+        for (let i=64,p=0;i<72;i++,p++) {
+            heads[3].data.push(ProfileDataRef.value[3][i]);
+        }
+        for (let i=72,p=0;i<80;i++,p++) {
+            heads[4].data.push(ProfileDataRef.value[3][i]);
+        }
+
         const option = {
             tooltip: {
-                trigger: 'axis'
+                trigger: 'item'
             },
             legend: {
                 top: '5%',
@@ -286,73 +304,44 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['组织', '团队', '操作', '沟通', '拓展']
+                data: head
             },
             xAxis: {
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
                 type: 'category',
-                data: ['任务一', '任务二', '任务三', '任务五', '任务六', '任务七', '任务八']
+                data: task
             },
             yAxis: {
                 type: 'value',
             },
-            series: [
-                {
-                    name: '组织',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '团队',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '操作',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '沟通',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '拓展',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-            ]
+            series: heads
         }
         charts_four.setOption(option);
     }
 
     const setEchartsFive = async () => {
-        const rawData = [
-            [
-                AverageScoreRankDataRef.value[0].ch,
-                AverageScoreRankDataRef.value[1].ch,
-                AverageScoreRankDataRef.value[2].ch,
-                AverageScoreRankDataRef.value[3].ch,
-                AverageScoreRankDataRef.value[4].ch,
-            ],
-            [
-                GroupScoreRankDataRef.value[0].ch,
-                GroupScoreRankDataRef.value[1].ch,
-                GroupScoreRankDataRef.value[2].ch,
-                GroupScoreRankDataRef.value[3].ch,
-                GroupScoreRankDataRef.value[4].ch,
-            ],
-            [
-                SkillRankDataRef.value[0].ch,
-                SkillRankDataRef.value[1].ch,
-                SkillRankDataRef.value[2].ch,
-                SkillRankDataRef.value[3].ch,
-                SkillRankDataRef.value[4].ch,
-            ],
-        ];
+        let task = [],head = [],data = [],heads = [],valu = [];
+        for (let i=89;i<106;i+=8) {
+            head.push(ProfileDataRef.value[1][i]);
+        }
+
+        for(let i=0;i<head.length;i++) {
+            data.push([]);
+        }
+
+        for(let i=89;i<97;i++) {
+            data[0].push(ProfileDataRef.value[3][i]);
+        }
+        for(let i=97;i<105;i++) {
+            data[1].push(ProfileDataRef.value[3][i]);
+        }
+        for(let i=105;i<113;i++) {
+            data[2].push(ProfileDataRef.value[3][i]);
+        }
+
+        const rawData = data;
         const totalData = [];
         for (let i = 0; i < rawData[0].length; ++i) {
             let sum = 0;
@@ -361,7 +350,7 @@
             }
             totalData.push(sum);
         }
-        const series = ['知识分数','能力分数','素质分数'].map((name, sid) => {
+        const series = head.map((name, sid) => {
             return {
                 name,
                 type: 'bar',
@@ -378,6 +367,9 @@
         });
 
         const option = {
+            tooltip: {
+                trigger: 'axis'
+            },
             legend: {
                 top: '5%',
                 left: 'center',
@@ -399,7 +391,7 @@
             },
             xAxis: {
                 type: 'category',
-                data: ['任务一', '任务二', '任务三', '任务四', '任务五'],
+                data: ['任务一', '任务二', '任务三', '任务四', '任务五', '任务六', '任务七', '任务八'],
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
@@ -410,6 +402,12 @@
     }
 
     const setEchartsSix = async () => {
+        let head = [],data = [];
+        for (let i=81;i<88;i++) {
+            head.push(ProfileDataRef.value[1][i]);
+            data.push(ProfileDataRef.value[2][i])
+        }
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -426,14 +424,14 @@
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['沟通', '操作', '组织', '团队', '学习', '课堂', '课后']
+                data: head
             },
             yAxis: {
                 type: 'value'
             },
             series: [{
                 type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data
             }]
         }
         charts_six.setOption(option);
@@ -441,7 +439,7 @@
 </script>
 
 <template>
-    <div style="width: 100vw;height: 100vh;" v-loading.fullscreen.lock="UIStore.siteErrors" element-loading-text="系统异常（请检查数据源）" :element-loading-svg="icons.loading" element-loading-svg-view-box="-10, -10, 50, 50">
+    <div style="width: 100vw;height: 100vh;" v-loading.fullscreen.lock="UIStore.siteErrors" element-loading-text="系统异常（请检查数据源）" :element-loading-svg="icons.loading" element-loading-svg-view-box="-10, -10, 50, 50" >
         <header>
             <h1>学生个人能力画像</h1>
         </header>
@@ -449,12 +447,12 @@
         <section class="main">
             <div class="column">
                 <div class="panel pie">
-                    <h2>专业能力</h2>
+                    <h2 v-if="ProfileDataRef != null">{{ ProfileDataRef[0][0] }}</h2>
                     <div class="canvas canvas-one"></div>
                     <div class="panel-footer"></div>
                 </div>
                 <div class="panel piel">
-                    <h2>考试成绩情况</h2>
+                    <h2 v-if="ProfileDataRef != null">{{ ProfileDataRef[0][89] }}</h2>
                     <div class="canvas canvas-five"></div>
                     <div class="panel-footer"></div>
                 </div>
@@ -473,13 +471,13 @@
                     </div>
     
                     <div class="panelx">
-                        <h2>个人增值</h2>
+                        <h2 v-if="ProfileDataRef != null">{{ ProfileDataRef[0][9] }}</h2>
                         <div class="canvas canvas-two"></div>
                         <div class="panel-footer"></div>
                     </div>
                 </div>
                 <div class="panel piel">
-                    <h2>任务完成情况</h2>
+                    <h2 v-if="ProfileDataRef != null">{{ ProfileDataRef[0][40] }}</h2>
                     <div class="canvas canvas-four"></div>
                     <div class="panel-footer"></div>
                 </div>
@@ -487,12 +485,12 @@
     
             <div class="column">
                 <div class="panel pie">
-                    <h2>五维能力</h2>
+                    <h2 v-if="ProfileDataRef != null">{{ ProfileDataRef[0][34] }}</h2>
                     <div class="canvas canvas-three"></div>
                     <div class="panel-footer"></div>
                 </div>
                 <div class="panel piel">
-                    <h2>适应能力</h2>
+                    <h2 v-if="ProfileDataRef != null">{{ ProfileDataRef[0][81] }}</h2>
                     <div class="canvas canvas-six"></div>
                     <div class="panel-footer"></div>
                 </div>

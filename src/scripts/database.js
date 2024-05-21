@@ -20,14 +20,18 @@ const screenTrees = {
 }
 
 const studentTrees = {
-    studentList: 'data'
+    studentList: '++id,data',
+    profileData: '++id,data',
+    studentAsly: '++id,data',
+    familysAsly: '++id,data',
 }
+
 
 const addIntoData = async (table,data) => {
     try {
         await table.add({ data: data });
     } catch (error) {
-        console.log(error)
+        console.error(error)
         await ElMessage({ message: '写入数据库失败！', type: 'error', plain: true});
     }
 }

@@ -11,7 +11,9 @@
     defineProps({ id: Object });
     const ScreenStore = useScreentore();
     let database = databaseOption.screenDatabase;
+    let studentDatabase = databaseOption.studentDatabase;
     database.version(1).stores(databaseOption.screenTrees);
+    studentDatabase.version(1).stores(databaseOption.studentTrees);
     let charts_one,charts_two,charts_three,charts_four,charts_five,charts_six;
 
     const UIStore = useUIStore();
@@ -24,6 +26,7 @@
         charts_six = echarts.init(document.querySelector(".canvas-six"));
     }
 
+    const ProfileDataRef = ref(null);
     const SkillRankHeadRef = ref(null);
     const SkillRankDataRef = ref(null);
     const AttendanceHeadRef = ref(null);
@@ -41,6 +44,9 @@
         let TaskScoreAnalDataCache = [];
         let GroupScoreRankDataCache = [];
         let AverageScoreRankDataCache = [];
+
+        let ProFileData = await studentDatabase.familysAsly.toArray();
+        ProfileDataRef.value = ProFileData[0].data;
 
         let SkillRankHead = await database.SkillRankHead.toArray();
         SkillRankHeadRef.value = SkillRankHead[0].data;
@@ -108,26 +114,20 @@
     }
 
     const setEchartsOne = async () => {
+        let head = [],data = [];
+        for (let i=0;i<5;i++) {
+            head.push({
+                name: ProfileDataRef.value[1][i], max: 100
+            });
+            data.push(ProfileDataRef.value[2][i]);
+        }
+
         const option = {
             tooltip: {
                 trigger: 'item'
             },
-            legend: {
-                left: 'center',
-                bottom: '0%',
-                textStyle: {
-                    color: 'rgba(255, 255, 255)'
-                },
-                data: ['班级平均', '个人平均']
-            },
             radar: {
-                indicator: [
-                    { name: '特性应用', max: 100 },
-                    { name: '检测原理', max: 100 },
-                    { name: '实车概况', max: 100 },
-                    { name: '装配基础', max: 100 },
-                    { name: '注意事项', max: 100 },
-                ],
+                indicator: head,
             },
             series: [{
                 name: 'Budget vs spending',
@@ -137,53 +137,30 @@
                     borderRadius: 10,
                     borderColor: '#ffffff'
                 },
-                data: [
-                    {
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '班级平均'
-                    },{
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '个人平均'
-                    }
-                ]
+                data: [{
+                    value: data,
+                    name: '班级平均'
+                }]
             }]
         }
         charts_one.setOption(option);
     }
 
     const setEchartsTwo = async () => {
+        let head = [],data = [];
+        for (let i=6;i<11;i++) {
+            head.push({
+                name: ProfileDataRef.value[1][i], max: 100
+            });
+            data.push(ProfileDataRef.value[2][i]);
+        }
+
         const option = {
             tooltip: {
                 trigger: 'item'
             },
-            legend: {
-                left: 'center',
-                bottom: '0%',
-                textStyle: {
-                    color: 'rgba(255, 255, 255)'
-                },
-                data: ['班级平均', '个人平均']
-            },
             radar: {
-                indicator: [
-                    { name: '工具使用', max: 100 },
-                    { name: '装配流程', max: 100 },
-                    { name: '数据解析', max: 100 },
-                    { name: '装配效率', max: 100 },
-                    { name: '数据读取', max: 100 },
-                ],
+                indicator: head,
             },
             series: [{
                 name: 'Budget vs spending',
@@ -193,53 +170,30 @@
                     borderRadius: 10,
                     borderColor: '#ffffff'
                 },
-                data: [
-                    {
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '班级平均'
-                    },{
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '个人平均'
-                    }
-                ]
+                data: [{
+                    value: data,
+                    name: '班级平均'
+                }]
             }]
         }
         charts_two.setOption(option);
     }
 
     const setEchartsThree = async () => {
+        let head = [],data = [];
+        for (let i=12;i<17;i++) {
+            head.push({
+                name: ProfileDataRef.value[1][i], max: 100
+            });
+            data.push(ProfileDataRef.value[2][i]);
+        }
+
         const option = {
             tooltip: {
                 trigger: 'item'
             },
-            legend: {
-                left: 'center',
-                bottom: '0%',
-                textStyle: {
-                    color: 'rgba(255, 255, 255)'
-                },
-                data: ['班级平均', '个人平均']
-            },
             radar: {
-                indicator: [
-                    { name: '安全意识', max: 100 },
-                    { name: '规范意识', max: 100 },
-                    { name: '劳动精神', max: 100 },
-                    { name: '协作精神', max: 100 },
-                    { name: '创新意识', max: 100 },
-                ],
+                indicator: head,
             },
             series: [{
                 name: 'Budget vs spending',
@@ -249,27 +203,10 @@
                     borderRadius: 10,
                     borderColor: '#ffffff'
                 },
-                data: [
-                    {
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '班级平均'
-                    },{
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '个人平均'
-                    }
-                ]
+                data: [{
+                    value: data,
+                    name: '班级平均'
+                }]
             }]
         }
         charts_three.setOption(option);

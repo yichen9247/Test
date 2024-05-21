@@ -20,6 +20,18 @@ const handleFileUpload = async(event) => {
             const data = e.target.result;
             const workbook = XLSX.read(data, { type: 'binary' });
 
+            const profileData_book = workbook.SheetNames[workbook.SheetNames.indexOf('能力画像')];
+            const profileData_shet = workbook.Sheets[profileData_book];
+            const profileData_data = XLSX.utils.sheet_to_json(profileData_shet, { header: 1 });
+
+            const StudentAsly_book = workbook.SheetNames[workbook.SheetNames.indexOf('个人分析')];
+            const StudentAsly_shet = workbook.Sheets[StudentAsly_book];
+            const StudentAsly_data = XLSX.utils.sheet_to_json(StudentAsly_shet, { header: 1 });
+
+            const FamilysAsly_book = workbook.SheetNames[workbook.SheetNames.indexOf('整体分析')];
+            const FamilysAsly_shet = workbook.Sheets[FamilysAsly_book];
+            const FamilysAsly_data = XLSX.utils.sheet_to_json(FamilysAsly_shet, { header: 1 });
+
             const studentList_book = workbook.SheetNames[workbook.SheetNames.indexOf('学生信息')];
             const studentList_shet = workbook.Sheets[studentList_book];
             const studentList_data = XLSX.utils.sheet_to_json(studentList_shet, { header: 1 });
@@ -48,8 +60,11 @@ const handleFileUpload = async(event) => {
             const skillRank_shet = workbook.Sheets[skillRank_book];
             const skillRank_data = XLSX.utils.sheet_to_json(skillRank_shet, { header: 1 });
 
+            await renderProfile(profileData_data);
             await renderSkillRank(skillRank_data);
             await renderAtttendance(attendance_data);
+            await renderFamliysAsly(FamilysAsly_data);
+            await renderStudentAsly(StudentAsly_data);
             await renderStudentList(studentList_data);
             await renderAverageScore(averageScore_data);
             await renderGroupScoreRank(groupScoreRank_data);
@@ -114,6 +129,18 @@ const renderStudentList = async(data) => {
     await DataStore.setAttendTableName(namds);
     await DataStore.setScreenTableName(names);
     await databaseOption.addIntoData(studentDatabase.studentList,data);
+}
+
+const renderProfile = async(data) => {
+    await databaseOption.addIntoData(studentDatabase.profileData,data);
+}
+
+const renderStudentAsly = async(data) => {
+    await databaseOption.addIntoData(studentDatabase.studentAsly,data);
+}
+
+const renderFamliysAsly = async(data) => {
+    await databaseOption.addIntoData(studentDatabase.familysAsly,data);
 }
 
 const renderSkillRank = async(data) => {

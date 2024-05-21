@@ -5,4 +5,10 @@ const getRandomIntInclusive = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export default { getRandomIntInclusive }
+const getRandomIntInclusiveInter = (mins,maxs) => {
+    let min = Math.ceil(mins);
+    let max = Math.floor(maxs);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+export default { getRandomIntInclusive, getRandomIntInclusiveInter }
