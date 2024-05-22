@@ -3,6 +3,7 @@
     import * as echarts from 'echarts'
     import icons from "@/scripts/icons"
     import random from '@/scripts/random'
+    import data from "@/scripts/data.js"
     import { onBeforeUnmount, onMounted } from "vue"
 
     let charts_one,charts_two,charts_three,charts_four,charts_five,charts_six;
@@ -45,7 +46,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '65%'],
                 itemStyle: {
@@ -57,11 +57,7 @@
                     show: true,
                     color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    { value: 16, name: '良好率' },
-                    { value: 83, name: '优秀率' },
-                    { value: 32, name: '及格率' },
-                ]
+                data: data[0][0].data
             }]
         };
         charts_one.setOption(option);
@@ -77,7 +73,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['0','65%'],
                 itemStyle: {
@@ -93,11 +88,7 @@
                     orient: 'vertical',
                     left: 'left'
                 },
-                data: [
-                    { value: 16, name: '命令运用' },
-                    { value: 83, name: '创建低模' },
-                    { value: 32, name: '熟悉软件' },
-                ],
+                data: data[0][1].data,
             }]
         };
         charts_two.setOption(option);
@@ -113,7 +104,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '65%'],
                 avoidLabelOverlap: false,
@@ -133,11 +123,7 @@
                     borderRadius: 10,
                     borderColor: '#ffffff'
                 },
-                data: [
-                    { value: 16, name: '良好率' },
-                    { value: 83, name: '优秀率' },
-                    { value: 32, name: '及格率' },
-                ]
+                data: data[0][2].data
             }]
         }
         charts_three.setOption(option);
@@ -155,7 +141,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 selectedMode: 'single',
                 radius: ['0','65%'],
@@ -170,15 +155,7 @@
                         color: '#235894'
                     }
                 },
-                data: [
-                    { value: 16, name: '抖音' },
-                    { value: 18, name: '快手' },
-                    { value: 30, name: '微博' },
-                    { value: 28, name: '微信' },
-                    { value: 20, name: '知乎' },
-                    { value: 22, name: '闲鱼' },
-
-                ],
+                data: data[0][3].data,
                 itemStyle: {
                     opacity: 0.7,
                     color: {
@@ -210,46 +187,46 @@
             xAxis: [{
                 type: 'category',
                 boundaryGap: false,
-                data: ['第一组', '第二组', '第三组', '第四组', '第五组']
+                data: data[0][4].label
             }],
             yAxis: [{
                 type: 'value'
             }],
             series: [{
-                name: 'Email',
-                type: 'line',
+                name: data[0][4].data[0].name,
+                type: data[0][4].data[0].type,
                 stack: 'Total',
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[0][4].data[0].value,
             },{
-                name: 'Union Ads',
-                type: 'line',
+                name: data[0][4].data[1].name,
+                type: data[0][4].data[1].type,
                 stack: 'Total',
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[0][4].data[0].value,
             },{
-                name: 'Video Ads',
-                type: 'line',
+                name: data[0][4].data[2].name,
+                type: data[0][4].data[2].type,
                 stack: 'Total',
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[0][4].data[0].value,
             },{
-                name: 'Direct',
-                type: 'line',
+                name: data[0][4].data[3].name,
+                type: data[0][4].data[3].type,
                 stack: 'Total',
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[0][4].data[0].value,
             },{
-                name: 'Search Engine',
-                type: 'line',
+                name: data[0][4].data[4].name,
+                type: data[0][4].data[4].type,
                 stack: 'Total',
                 label: {
                     show: true,
@@ -258,7 +235,7 @@
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[0][4].data[0].value,
             }]
         }
         charts_five.setOption(option);
@@ -277,7 +254,7 @@
                 axisTick: {
                     alignWithLabel: true
                 },
-                data: ['项目一', '项目二', '项目三', '项目四', '项目五', '项目六', '项目七', '项目八', '项目九', '项目十']
+                data: data[0][5].lebel
             },
             yAxis: {
                 type: 'value'
@@ -292,8 +269,7 @@
             },
             series: [{
                 type: 'bar',
-                name: 'Access From',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[0][5].data
             }]
         }
         charts_six.setOption(option);

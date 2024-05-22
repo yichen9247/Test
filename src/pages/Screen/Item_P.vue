@@ -140,7 +140,6 @@
                 indicator: head,
             },
             series: [{
-                name: 'Budget vs spending',
                 type: 'radar',
                 itemStyle: {
                     borderWidth: 2,
@@ -173,7 +172,6 @@
                 indicator: head,
             },
             series: [{
-                name: 'Budget vs spending',
                 type: 'radar',
                 itemStyle: {
                     borderWidth: 2,
@@ -206,7 +204,6 @@
                 indicator: head,
             },
             series: [{
-                name: 'Budget vs spending',
                 type: 'radar',
                 itemStyle: {
                     borderWidth: 2,
@@ -226,14 +223,6 @@
         const option = {
             tooltip: {
                 trigger: 'item'
-            },
-            legend: {
-                left: 'center',
-                bottom: '0%',
-                align: 'center',
-                textStyle: {
-                    color: 'rgba(255, 255, 255)'
-                },
             },
             series: [{
                 name: 'Access From',
@@ -256,11 +245,11 @@
                     }
                 },
                 data: [
-                    {name: AverageScoreHeadRef.value[0],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[1],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[2],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[3],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[4],value: random.getRandomIntInclusive()},
+                    {name: AverageScoreHeadRef.value[0],value: random.getRandomIntInclusiveInter(1,45),},
+                    {name: AverageScoreHeadRef.value[1],value: random.getRandomIntInclusiveInter(1,25),},
+                    {name: AverageScoreHeadRef.value[2],value: random.getRandomIntInclusiveInter(1,15),},
+                    {name: AverageScoreHeadRef.value[3],value: random.getRandomIntInclusiveInter(1,10),},
+                    {name: AverageScoreHeadRef.value[4],value: random.getRandomIntInclusiveInter(1,5),},
                 ],
             }]
         }
@@ -303,11 +292,11 @@
                 barWidth: 25,
                 name: '平均成绩分析',
                 data: [
-                    {name: AverageScoreHeadRef.value[0],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[1],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[2],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[3],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[4],value: random.getRandomIntInclusive()},
+                    {name: AverageScoreHeadRef.value[0],value: random.getRandomIntInclusiveInter(1,45),},
+                    {name: AverageScoreHeadRef.value[1],value: random.getRandomIntInclusiveInter(1,25),},
+                    {name: AverageScoreHeadRef.value[2],value: random.getRandomIntInclusiveInter(1,15),},
+                    {name: AverageScoreHeadRef.value[3],value: random.getRandomIntInclusiveInter(1,10),},
+                    {name: AverageScoreHeadRef.value[4],value: random.getRandomIntInclusiveInter(1,5),},
                 ],
             }]
         }

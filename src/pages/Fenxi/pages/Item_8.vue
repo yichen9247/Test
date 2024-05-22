@@ -3,6 +3,7 @@
     import * as echarts from 'echarts'
     import icons from "@/scripts/icons"
     import random from '@/scripts/random'
+    import data from "@/scripts/data.js"
     import { onBeforeUnmount, onMounted } from "vue"
 
     let charts_one, charts_two, charts_three, charts_four, charts_five, charts_six;
@@ -46,7 +47,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '65%'],
                 itemStyle: {
@@ -58,39 +58,27 @@
                     show: true,
                     color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    { value: 16, name: '良好率' },
-                    { value: 83, name: '优秀率' },
-                    { value: 32, name: '合格率' },
-                ]
+                data: data[7][0].data
             }]
         }
         charts_one.setOption(option);
     }
 
     const setEchartsTwo = async () => {
-        const option = {
-            
-        }
+        const option = {}
         charts_two.setOption(option);
     }
 
     const setEchartsThree = async () => {
-        const rawData = [
-            [100, 302, 301, 334, 390, 330, 320, 390, 330, 320, 334],
-            [320, 132, 101, 134, 90, 230, 210, 90, 230, 210, 134],
-            [220, 182, 191, 234, 290, 330, 310, 290, 330, 310, 191],
-            [150, 212, 201, 154, 190, 330, 410,190, 330, 410, 201],
-        ];
         const totalData = [];
-        for (let i = 0; i < rawData[0].length; ++i) {
+        for (let i = 0; i < data[7][1].data[0].length; ++i) {
             let sum = 0;
-            for (let j = 0; j < rawData.length; ++j) {
-                sum += rawData[j][i];
+            for (let j = 0; j < data[7][1].data.length; ++j) {
+                sum += data[7][1].data[j][i];
             }
             totalData.push(sum);
         }
-        const series = ['基本剪辑','Lumetri调色','片子输出'].map((name, sid) => {
+        const series = data[7][1].legend.map((name, sid) => {
             return {
                 name,
                 type: 'bar',
@@ -100,7 +88,7 @@
                     show: true,
                     formatter: (params) => Math.round(params.value * 1000) / 10 + '%'
                 },
-                data: rawData[sid].map((d, did) =>
+                data: data[7][1].data[sid].map((d, did) =>
                     totalData[did] <= 0 ? 0 : d / totalData[did]
                 )
             };
@@ -122,7 +110,7 @@
             },
             xAxis: {
                 type: 'category',
-                data: ['第一组', '第二组', '第三组', '第四组', '第五组']
+                data: data[7][1].label
             },
             series
         }
@@ -141,7 +129,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 selectedMode: 'single',
                 radius: ['0','65%'],
@@ -156,15 +143,7 @@
                         color: '#235894'
                     }
                 },
-                data: [
-                    { value: 16, name: '抖音' },
-                    { value: 18, name: '快手' },
-                    { value: 30, name: '微博' },
-                    { value: 28, name: '微信' },
-                    { value: 20, name: '知乎' },
-                    { value: 22, name: '闲鱼' },
-
-                ],
+                data: data[7][2].data,
                 itemStyle: {
                     opacity: 0.7,
                     color: {
@@ -198,14 +177,14 @@
             xAxis: [{
                 type: 'category',
                 boundaryGap: false,
-                data: ['第一组', '第二组', '第三组', '第四组', '第五组']
+                data: data[7][3].label
             }],
             yAxis: [{
                 type: 'value'
             }],
             series: [{
-                name: '完成湖面建模',
-                type: 'line',
+                name: data[7][3].data[0].name,
+                type: data[7][3].data[0].type,
                 stack: 'Total',
                 smooth: true,
                 lineStyle: {
@@ -225,10 +204,10 @@
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[7][3].data[0].value,
             },{
-                name: '完成图片收集',
-                type: 'line',
+                name: data[7][3].data[1].name,
+                type: data[7][3].data[1].type,
                 stack: 'Total',
                 smooth: true,
                 lineStyle: {
@@ -248,7 +227,7 @@
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[7][3].data[1].value,
             }]
         }
         charts_five.setOption(option);
@@ -267,7 +246,7 @@
                 axisTick: {
                     alignWithLabel: true
                 },
-                data: ['项目一', '项目二', '项目三', '项目四', '项目五', '项目六', '项目七', '项目八', '项目九', '项目十']
+                data: data[7][4].lebel,
             },
             yAxis: {
                 type: 'value'
@@ -282,8 +261,7 @@
             },
             series: [{
                 type: 'bar',
-                name: 'Access From',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[7][4].data,
             }]
         }
         charts_six.setOption(option);

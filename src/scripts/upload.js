@@ -32,6 +32,10 @@ const handleFileUpload = async(event) => {
             const FamilysAsly_shet = workbook.Sheets[FamilysAsly_book];
             const FamilysAsly_data = XLSX.utils.sheet_to_json(FamilysAsly_shet, { header: 1 });
 
+            const GroupsAsly_book = workbook.SheetNames[workbook.SheetNames.indexOf('小组分析')];
+            const GroupsAsly_shet = workbook.Sheets[GroupsAsly_book];
+            const GroupsAsly_data = XLSX.utils.sheet_to_json(GroupsAsly_shet, { header: 1 });
+
             const studentList_book = workbook.SheetNames[workbook.SheetNames.indexOf('学生信息')];
             const studentList_shet = workbook.Sheets[studentList_book];
             const studentList_data = XLSX.utils.sheet_to_json(studentList_shet, { header: 1 });
@@ -62,6 +66,7 @@ const handleFileUpload = async(event) => {
 
             await renderProfile(profileData_data);
             await renderSkillRank(skillRank_data);
+            await renderGroupsAsly(GroupsAsly_data);
             await renderAtttendance(attendance_data);
             await renderFamliysAsly(FamilysAsly_data);
             await renderStudentAsly(StudentAsly_data);
@@ -122,7 +127,8 @@ const renderStudentList = async(data) => {
             qd: iterator[6],
             qj: iterator[7],
             cd: iterator[8],
-            kk: iterator[9]
+            kk: iterator[9],
+            ph: iterator[10],
         });
     }
     await DataStore.setFileData(datas);
@@ -137,6 +143,10 @@ const renderProfile = async(data) => {
 
 const renderStudentAsly = async(data) => {
     await databaseOption.addIntoData(studentDatabase.studentAsly,data);
+}
+
+const renderGroupsAsly = async(data) => {
+    await databaseOption.addIntoData(studentDatabase.groupsAsly,data);
 }
 
 const renderFamliysAsly = async(data) => {

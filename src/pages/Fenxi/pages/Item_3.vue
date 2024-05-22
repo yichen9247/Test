@@ -1,6 +1,7 @@
 <script setup>
     import * as echarts from 'echarts'
     import random from '@/scripts/random'
+    import data from "@/scripts/data.js"
     import { onBeforeUnmount, onMounted } from "vue"
 
     let charts_one, charts_two, charts_three, charts_four, charts_five, charts_six;
@@ -44,7 +45,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '65%'],
                 itemStyle: {
@@ -56,11 +56,7 @@
                     show: true,
                     color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    { value: 16, name: '良好率' },
-                    { value: 83, name: '优秀率' },
-                    { value: 32, name: '及格率' },
-                ]
+                data: data[2][0].data
             }]
         }
         charts_one.setOption(option);
@@ -76,7 +72,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['0','65%'],
                 itemStyle: {
@@ -92,11 +87,7 @@
                     orient: 'vertical',
                     left: 'left'
                 },
-                data: [
-                    { value: 16, name: '命令运用' },
-                    { value: 83, name: '创建低模' },
-                    { value: 32, name: '熟悉软件' },
-                ],
+                data: data[2][1].data,
             }]
         }
         charts_two.setOption(option);
@@ -120,17 +111,10 @@
                 }
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['0','65%'],
                 center: ['50%', '50%'],
-                data: [
-                    { value: 335, name: '微信' },
-                    { value: 310, name: '微博' },
-                    { value: 274, name: '钉钉' },
-                    { value: 235, name: '知乎' },
-                    { value: 400, name: '淘宝' }
-                ].sort(function (a, b) {
+                data: data[2][2].data.sort(function (a, b) {
                     return a.value - b.value;
                 }),
                 roseType: 'radius',
@@ -168,10 +152,9 @@
             legend: {
                 left: 'center',
                 bottom: '0%',
-                data: ['微信', '抖音', '快手', '钉钉', '淘宝']
+                data: data[2][3].legend
             },
             series: [{
-                name: 'Access From',
                 type: 'funnel',
                 left: '10%',
                 top: 60,
@@ -199,13 +182,7 @@
                         fontSize: 20
                     }
                 },
-                data: [
-                    { value: 60, name: '微信' },
-                    { value: 40, name: '抖音' },
-                    { value: 20, name: '快手' },
-                    { value: 80, name: '钉钉' },
-                    { value: 100, name: '淘宝' }
-                ]
+                data:data[2][3].data
             }]
         }
         charts_four.setOption(option)
@@ -230,19 +207,19 @@
             legend: {
                 left: 'center',
                 bottom: '0%',
-                data: ['完成湖面建模','完成图片收集']
+                data: data[2][4].legend
             },
             xAxis: [{
                 type: 'category',
                 boundaryGap: false,
-                data: ['第一组', '第二组', '第三组', '第四组', '第五组']
+                data: data[2][3].label
             }],
             yAxis: [{
                 type: 'value'
             }],
             series: [{
-                name: '完成湖面建模',
-                type: 'line',
+                name: data[2][4].data[0].name,
+                type: data[2][4].data[0].type,
                 stack: 'Total',
                 smooth: true,
                 lineStyle: {
@@ -262,10 +239,10 @@
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[2][4].data[0].value,
             },{
-                name: '完成图片收集',
-                type: 'line',
+                name: data[2][4].data[1].name,
+                type: data[2][4].data[1].type,
                 stack: 'Total',
                 smooth: true,
                 lineStyle: {
@@ -285,7 +262,7 @@
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[2][4].data[0].value,
             }]
         }
         charts_five.setOption(option);
@@ -308,7 +285,7 @@
             legend: {
                 left: 'center',
                 bottom: '0%',
-                data: ['模块应用不足','层次认识不足','不熟悉编辑器','制作简单动画']
+                data: data[2][5].lengend,
             },
             xAxis: {
                 type: 'value',
@@ -316,25 +293,9 @@
             },
             yAxis: {
                 type: 'category',
-                data: ['第五组', '第四组', '第三组', '第二组', '第一组']
+                data: data[2][5].label,
             },
-            series: [{
-                name: '模块应用不足',
-                type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-            },{
-                name: '层次认识不足',
-                type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-            },{
-                name: '不熟悉编辑器',
-                type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-            },{
-                name: '制作简单动画',
-                type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-            }]
+            series: data[2][5].series,
         }
         charts_six.setOption(option);
     }

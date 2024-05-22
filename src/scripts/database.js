@@ -20,6 +20,7 @@ const screenTrees = {
 }
 
 const studentTrees = {
+    groupsAsly: '++id,data',
     studentList: '++id,data',
     profileData: '++id,data',
     studentAsly: '++id,data',

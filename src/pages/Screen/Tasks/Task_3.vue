@@ -124,9 +124,27 @@
     }
 
     const setEchartsOne = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
-                trigger: 'item'
+                trigger: 'axis'
+            },
+            grid: {
+                left: '6%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: true
             },
             legend: {
                 left: 'center',
@@ -134,55 +152,58 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['班级平均', '个人平均']
+                data: ['低阶任务', '高阶任务']
             },
-            radar: {
-                indicator: [
-                    { name: '特性应用', max: 100 },
-                    { name: '检测原理', max: 100 },
-                    { name: '实车概况', max: 100 },
-                    { name: '装配基础', max: 100 },
-                    { name: '注意事项', max: 100 },
-                ],
-            },
-            series: [{
-                name: 'Budget vs spending',
-                type: 'radar',
-                itemStyle: {
-                    borderWidth: 2,
-                    borderRadius: 10,
-                    borderColor: '#ffffff'
+            xAxis: {
+                axisLabel: {
+                    color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    {
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '班级平均'
-                    },{
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '个人平均'
-                    }
-                ]
-            }]
+                type: 'category',
+                data: ['预检流程','IACC系统故障树','传感器的功能','检修方法与流程']
+            },
+            yAxis: {
+                min: 70,
+                max: 100,
+                type: 'value',
+            },
+            series: [
+                {
+                    name: '低阶任务',
+                    type: 'line',
+                    data: [d1,d2,d3,d4,d5]
+                },
+                {
+                    name: '高阶任务',
+                    type: 'line',
+                    data: [g1,g2,g3,g4,g5]
+                },
+            ]
         }
         charts_one.setOption(option);
     }
 
     const setEchartsTwo = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
-                trigger: 'item'
+                trigger: 'axis'
+            },
+            grid: {
+                left: '6%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: true
             },
             legend: {
                 left: 'center',
@@ -190,55 +211,58 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['班级平均', '个人平均']
+                data: ['低阶任务', '高阶任务']
             },
-            radar: {
-                indicator: [
-                    { name: '工具使用', max: 100 },
-                    { name: '装配流程', max: 100 },
-                    { name: '数据解析', max: 100 },
-                    { name: '装配效率', max: 100 },
-                    { name: '数据读取', max: 100 },
-                ],
-            },
-            series: [{
-                name: 'Budget vs spending',
-                type: 'radar',
-                itemStyle: {
-                    borderWidth: 2,
-                    borderRadius: 10,
-                    borderColor: '#ffffff'
+            xAxis: {
+                axisLabel: {
+                    color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    {
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '班级平均'
-                    },{
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '个人平均'
-                    }
-                ]
-            }]
+                type: 'category',
+                data: ['完成接车预检','读取故障码','完成接车预检','制定检修方案','拆装更换部件']
+            },
+            yAxis: {
+                min: 70,
+                max: 100,
+                type: 'value',
+            },
+            series: [
+                {
+                    name: '低阶任务',
+                    type: 'line',
+                    data: [d1,d2,d3,d4,d5]
+                },
+                {
+                    name: '高阶任务',
+                    type: 'line',
+                    data: [g1,g2,g3,g4,g5]
+                },
+            ]
         }
         charts_two.setOption(option);
     }
 
     const setEchartsThree = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
-                trigger: 'item'
+                trigger: 'axis'
+            },
+            grid: {
+                left: '6%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: true
             },
             legend: {
                 left: 'center',
@@ -246,47 +270,32 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['班级平均', '个人平均']
+                data: ['低阶任务', '高阶任务']
             },
-            radar: {
-                indicator: [
-                    { name: '安全意识', max: 100 },
-                    { name: '规范意识', max: 100 },
-                    { name: '劳动精神', max: 100 },
-                    { name: '协作精神', max: 100 },
-                    { name: '创新意识', max: 100 },
-                ],
-            },
-            series: [{
-                name: 'Budget vs spending',
-                type: 'radar',
-                itemStyle: {
-                    borderWidth: 2,
-                    borderRadius: 10,
-                    borderColor: '#ffffff'
+            xAxis: {
+                axisLabel: {
+                    color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    {
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '班级平均'
-                    },{
-                        value: [
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                            random.getRandomIntInclusive(),
-                        ],
-                        name: '个人平均'
-                    }
-                ]
-            }]
+                type: 'category',
+                data: ['安全生产意识','专注检测','精益维修','规范验证','新技术应用']
+            },
+            yAxis: {
+                min: 70,
+                max: 100,
+                type: 'value',
+            },
+            series: [
+                {
+                    name: '低阶任务',
+                    type: 'line',
+                    data: [d1,d2,d3,d4,d5]
+                },
+                {
+                    name: '高阶任务',
+                    type: 'line',
+                    data: [g1,g2,g3,g4,g5]
+                },
+            ]
         }
         charts_three.setOption(option);
     }
@@ -294,130 +303,140 @@
     const setEchartsFour = async () => {
         const option = {
             tooltip: {
-                trigger: 'item'
+                trigger: 'axis'
             },
-            series: [{
-                name: '知识成绩分布',
-                type: 'pie',
-                radius: ['0%', '65%'],
-                itemStyle: {
-                    borderWidth: 2,
-                    borderRadius: 10,
-                    borderColor: '#ffffff'
-                },
-                label: {
-                    show: true,
+            grid: {
+                left: '6%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: true
+            },
+            legend: {
+                left: 'center',
+                bottom: '0%',
+                textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                labelLine: {
-                    normal: {
-                        show: true,
-                        length: 40,
-                        length2: 40
-                    }
+                data: ['低阶任务', '高阶任务']
+            },
+            xAxis: {
+                axisLabel: {
+                    color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    {name: AverageScoreHeadRef.value[0],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[1],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[2],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[3],value: random.getRandomIntInclusive()},
-                    {name: AverageScoreHeadRef.value[4],value: random.getRandomIntInclusive()},
-                ],
-            }]
+                type: 'category',
+                data: ['任务一', '任务二', '任务三', '任务四', '任务五', '任务六', '任务七', '任务八'],
+            },
+            yAxis: {
+                min: 70,
+                max: 100,
+                type: 'value',
+            },
+            series: [
+                {
+                    name: '低阶任务',
+                    type: 'bar',
+                    data: [random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100)]
+                },
+                {
+                    name: '高阶任务',
+                    type: 'bar',
+                    data: [random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100)]
+                },
+            ]
         }
         charts_four.setOption(option);
     }
 
     const setEchartsFive = async () => {
         const option = {
-            grid: {
-                left: '8%',
-                right: '4%',
-                bottom: '10%',
-            },
-            xAxis: {
-                type: 'category',
-                axisTick: {
-                    alignWithLabel: true
-                },
-                axisLabel: {
-                    color: 'rgba(255, 255, 255)'
-                },
-                data: AverageScoreHeadRef.value
-            },
-            yAxis: {
-                type: 'value',
-                axisLabel: {
-                    color: 'rgba(255, 255, 255)'
-                },
-            },
-            label: {
-                show: true,
-                position: 'top',
-                color: 'rgba(255, 255, 255)'
-            },
             tooltip: {
                 trigger: 'axis'
             },
-            series: [{
-                type: 'bar',
-                barWidth: 25,
-                name: '平均成绩分析',
-                data: [
-                    random.getRandomIntInclusive(),
-                    random.getRandomIntInclusive(),
-                    random.getRandomIntInclusive(),
-                    random.getRandomIntInclusive(),
-                    random.getRandomIntInclusive()
-                ]
-            }]
+            grid: {
+                left: '6%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: true
+            },
+            legend: {
+                left: 'center',
+                bottom: '0%',
+                textStyle: {
+                    color: 'rgba(255, 255, 255)'
+                },
+                data: ['低阶任务', '高阶任务']
+            },
+            xAxis: {
+                axisLabel: {
+                    color: 'rgba(255, 255, 255)'
+                },
+                type: 'category',
+                data: ['任务一', '任务二', '任务三', '任务四', '任务五', '任务六', '任务七', '任务八'],
+            },
+            yAxis: {
+                min: 70,
+                max: 100,
+                type: 'value',
+            },
+            series: [
+                {
+                    name: '低阶任务',
+                    type: 'bar',
+                    data: [random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100)]
+                },
+                {
+                    name: '高阶任务',
+                    type: 'bar',
+                    data: [random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100)]
+                },
+            ]
         }
         charts_five.setOption(option);
     }
 
     const setEchartsSix = async () => {
         const option = {
-            grid: {
-                left: '8%',
-                right: '4%',
-                bottom: '10%',
-            },
-            xAxis: {
-                type: 'category',
-                axisTick: {
-                    alignWithLabel: true
-                },
-                axisLabel: {
-                    color: 'rgba(255, 255, 255)'
-                },
-                data: AverageScoreHeadRef.value
-            },
-            yAxis: {
-                type: 'value',
-                axisLabel: {
-                    color: 'rgba(255, 255, 255)'
-                },
-            },
-            label: {
-                show: true,
-                position: 'top',
-                color: 'rgba(255, 255, 255)'
-            },
             tooltip: {
                 trigger: 'axis'
             },
-            series: [{
-                type: 'line',
-                barWidth: 25,
-                name: '平均成绩分析',
-                data: [
-                    random.getRandomIntInclusive(),
-                    random.getRandomIntInclusive(),
-                    random.getRandomIntInclusive(),
-                    random.getRandomIntInclusive(),
-                    random.getRandomIntInclusive()
-                ]
-            }]
+            grid: {
+                left: '6%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: true
+            },
+            legend: {
+                left: 'center',
+                bottom: '0%',
+                textStyle: {
+                    color: 'rgba(255, 255, 255)'
+                },
+                data: ['低阶任务', '高阶任务']
+            },
+            xAxis: {
+                axisLabel: {
+                    color: 'rgba(255, 255, 255)'
+                },
+                type: 'category',
+                data: ['任务一', '任务二', '任务三', '任务四', '任务五', '任务六', '任务七', '任务八'],
+            },
+            yAxis: {
+                min: 70,
+                max: 100,
+                type: 'value',
+            },
+            series: [
+                {
+                    name: '低阶任务',
+                    type: 'bar',
+                    data: [random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100)]
+                },
+                {
+                    name: '高阶任务',
+                    type: 'bar',
+                    data: [random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100)]
+                },
+            ]
         }
         charts_six.setOption(option);
     }
@@ -428,7 +447,6 @@
             await queryScreenData();
             await getStudentInfo();
         } catch(e) {
-            console.log(e)
             await UIStore.setSiteErrors(true);
             await ElMessage({ message: '数据源异常！', type: 'error', plain: true});
         }
@@ -471,7 +489,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">整体知识目标分析</p>
+                            <p class="head-title">个人知识增值</p>
                         </div>
                         <div class="box-body">
                             <img src="../../../assets/image/bg02.png" alt="" draggable="false">
@@ -483,7 +501,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">整体能力目标分析</p>
+                            <p class="head-title">个人能力增值</p>
                         </div>
                         <div class="box-body">
                             <img src="../../../assets/image/bg02.png" alt="" draggable="false">
@@ -495,7 +513,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">整体素质目标分析</p>
+                            <p class="head-title">个人素质增值</p>
                         </div>
                         <div class="box-body">
                             <img src="../../../assets/image/bg02.png" alt="" draggable="false">
@@ -522,7 +540,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">小组成绩分析</p>
+                            <p class="head-title">能力成绩分布</p>
                         </div>
                         <div class="box-body">
                             <img src="../../../assets/image/bg02.png" alt="" draggable="false">
@@ -534,7 +552,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">技能成绩分析</p>
+                            <p class="head-title">素质成绩分布</p>
                         </div>
                         <div class="box-body">
                             <img src="../../../assets/image/bg02.png" alt="" draggable="false">

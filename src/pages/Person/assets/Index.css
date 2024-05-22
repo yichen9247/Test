@@ -147,11 +147,32 @@ section div.column div.panelx div.image-box {
   margin: 1vh 0;
   display: flex;
 }
+section div.column div.panel div.image-box span.el-avatar,
+section div.column div.panelx div.image-box span.el-avatar {
+  width: 150px;
+  height: 95%;
+  display: flex;
+  margin: auto;
+  border-radius: 8px;
+}
+section div.column div.panel div.image-box span.el-avatar img,
+section div.column div.panelx div.image-box span.el-avatar img {
+  width: 100%;
+  height: 100%;
+}
 section div.column div.panel div.image-box svg,
 section div.column div.panelx div.image-box svg {
   width: 80%;
   height: 80%;
   margin: auto;
+}
+section div.column div.panel div.image-box img.avatar,
+section div.column div.panelx div.image-box img.avatar {
+  width: 150px;
+  height: 95%;
+  margin: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 section div.column div.panel p.user-name,
 section div.column div.panelx p.user-name {

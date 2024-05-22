@@ -1,6 +1,7 @@
 <script setup>
     import * as echarts from 'echarts'
     import random from '@/scripts/random'
+    import data from "@/scripts/data.js"
     import { onBeforeUnmount, onMounted } from "vue"
 
     let charts_one, charts_two, charts_three, charts_four, charts_five, charts_six;
@@ -44,7 +45,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '65%'],
                 itemStyle: {
@@ -56,11 +56,7 @@
                     show: true,
                     color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    { value: 16, name: '良好率' },
-                    { value: 83, name: '优秀率' },
-                    { value: 32, name: '及格率' },
-                ]
+                data: data[6][0].data
             }]
         };
         charts_one.setOption(option);
@@ -76,7 +72,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['0','65%'],
                 itemStyle: {
@@ -92,11 +87,7 @@
                     orient: 'vertical',
                     left: 'left'
                 },
-                data: [
-                    { value: 16, name: '命令运用' },
-                    { value: 83, name: '创建低模' },
-                    { value: 32, name: '熟悉软件' },
-                ],
+                data: data[6][1].data,
             }]
         };
         charts_two.setOption(option);
@@ -113,7 +104,7 @@
             legend: {
                 left: 'center',
                 bottom: '0%',
-                data: ['调整阴影', '路径动画']
+                data: data[6][2].legend
             },
             grid: {
                 left: '6%',
@@ -124,29 +115,29 @@
             xAxis: [{
                 type: 'category',
                 boundaryGap: false,
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+                data: data[6][2].label
             }],
             yAxis: [{
                 type: 'value'
             }],
             series: [{
-                name: '调整阴影',
-                type: 'line',
+                name: data[6][2].data[0].name,
+                type: data[6][2].data[0].type,
                 stack: 'Total',
                 areaStyle: {},
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[6][2].data[0].value,
             },{
-                name: '路径动画',
-                type: 'line',
+                name: data[6][2].data[1].name,
+                type: data[6][2].data[1].type,
                 stack: 'Total',
                 areaStyle: {},
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[6][2].data[1].value,
             }]
         }
         charts_three.setOption(option);
@@ -170,17 +161,10 @@
                 }
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['0','65%'],
                 center: ['50%', '50%'],
-                data: [
-                    { value: 335, name: '微信' },
-                    { value: 310, name: '微博' },
-                    { value: 274, name: '钉钉' },
-                    { value: 235, name: '知乎' },
-                    { value: 400, name: '淘宝' }
-                ].sort(function (a, b) {
+                data: data[6][3].data.sort(function (a, b) {
                     return a.value - b.value;
                 }),
                 roseType: 'radius',
@@ -228,14 +212,14 @@
             xAxis: [{
                 type: 'category',
                 boundaryGap: false,
-                data: ['第一组', '第二组', '第三组', '第四组', '第五组']
+                data: data[6][4].label
             }],
             yAxis: [{
                 type: 'value'
             }],
             series: [{
-                name: '完成湖面建模',
-                type: 'line',
+                name: data[6][4].data[0].name,
+                type: data[6][4].data[0].type,
                 stack: 'Total',
                 smooth: true,
                 lineStyle: {
@@ -255,10 +239,10 @@
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[6][4].data[0].value,
             },{
-                name: '完成图片收集',
-                type: 'line',
+                name: data[6][4].data[1].name,
+                type: data[6][4].data[1].type,
                 stack: 'Total',
                 smooth: true,
                 lineStyle: {
@@ -278,7 +262,7 @@
                 emphasis: {
                     focus: 'series'
                 },
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[6][4].data[1].value,
             }]
         }
         charts_five.setOption(option);
@@ -297,7 +281,7 @@
                 axisTick: {
                     alignWithLabel: true
                 },
-                data: ['项目一', '项目二', '项目三', '项目四', '项目五', '项目六', '项目七', '项目八', '项目九', '项目十']
+                data: data[6][5].label
             },
             yAxis: {
                 type: 'value'
@@ -312,8 +296,7 @@
             },
             series: [{
                 type: 'bar',
-                name: 'Access From',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                data: data[6][5].data
             }]
         }
         charts_six.setOption(option);

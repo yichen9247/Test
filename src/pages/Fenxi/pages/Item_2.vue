@@ -2,6 +2,7 @@
     import * as echarts from 'echarts'
     import icons from "@/scripts/icons"
     import random from '@/scripts/random'
+    import data from "@/scripts/data.js"
     import { onBeforeUnmount, onMounted } from "vue"
 
     let charts_one, charts_two, charts_three, charts_four, charts_five, charts_six;
@@ -41,14 +42,13 @@
                 trigger: 'item',
             },
             series: [{
-                name: 'Access From',
                 type: 'gauge',
                 detail: {
                     valueAnimation: true,
                 },
                 data: [{
-                    value: random.getRandomIntInclusive(),
-                    name: 'SCORE'
+                    value: data[1][0].data,
+                    name: data[1][0].name
                 }]
             }]
         }
@@ -62,7 +62,6 @@
             },
             
             series: [{
-                name: 'Access From',
                 type: 'gauge',
                 progress: {
                     show: true
@@ -71,8 +70,8 @@
                     valueAnimation: true,
                 },
                 data: [{
-                    value: random.getRandomIntInclusive(),
-                    name: 'SCORE',
+                    value: data[1][1].data,
+                    name: data[1][1].name,
                 }]
             }]
         }
@@ -85,14 +84,13 @@
                 trigger: 'item',
             },
             series: [{
-                name: 'Access From',
                 type: 'gauge',
                 detail: {
                     valueAnimation: true,
                 },
                 data: [{
-                    value: random.getRandomIntInclusive(),
-                    name: 'SCORE'
+                    value: data[1][2].data,
+                    name: data[1][2].name
                 }]
             }]
         }
@@ -117,7 +115,7 @@
                 containLabel: true
             },
             xAxis: {
-                data: ['驯鹿', '火箭', '飞机', '高铁', '轮船', '汽车', '跑步', '步行'],
+                data: data[1][3].label,
                 axisTick: { show: false },
                 axisLine: { show: false },
                 axisLabel: {
@@ -144,7 +142,7 @@
                         opacity: 1
                     }
                 },
-                data: [123, 60, 25, 18, 12, 9, 2, 1],
+                data: data[1][3].data,
                 z: 10
             },{
                 name: 'glyph',
@@ -206,37 +204,16 @@
             legend: {
                 left: 'center',
                 bottom: '0%',
-                data: ['制作流程','操作规范','模型结构','模型比例']
+                data: data[1][4].lengend
             },
             xAxis: {
                 type: 'category',
-                data: ['第一组', '第二组', '第三组', '第四组', '第五组']
+                data: data[1][4].lebel
             },
             yAxis: {
                 type: 'value'
             },
-            series: [
-                {
-                    name: '制作流程',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '操作规范',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '模型结构',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '模型比例',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-            ]
+            series: data[1][4].series
         }
         charts_five.setOption(option);
     }
@@ -258,7 +235,7 @@
             legend: {
                 left: 'center',
                 bottom: '0%',
-                data: ['会简单布光','分辨不清光','理解不到位','能制作动效']
+                data: data[1][5].legend
             },
             xAxis: {
                 type: 'value',
@@ -266,25 +243,9 @@
             },
             yAxis: {
                 type: 'category',
-                data: ['第五组', '第四组', '第三组', '第二组', '第一组']
+                data: data[1][5].label
             },
-            series: [{
-                name: '会简单布光',
-                type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-            },{
-                name: '分辨不清光',
-                type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-            },{
-                name: '理解不到位',
-                type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-            },{
-                name: '能制作动效',
-                type: 'bar',
-                data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-            }]
+            series: data[1][5].series
         }
         charts_six.setOption(option);
     }

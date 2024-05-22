@@ -6,10 +6,8 @@
     import { useUIStore } from '@/stores/UIStore.js'
     import databaseOption from "@/scripts/database.js"
     import { onBeforeUnmount, onMounted, ref } from "vue"
-    import { useScreentore } from "@/stores/ScreenStore.js"
 
     defineProps({ id: Object });
-    const ScreenStore = useScreentore();
     let database = databaseOption.screenDatabase;
     database.version(1).stores(databaseOption.screenTrees);
     let charts_one,charts_two,charts_three,charts_four,charts_five,charts_six;
@@ -108,6 +106,18 @@
     }
 
     const setEchartsOne = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -124,28 +134,30 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['设定目标', '完成情况']
+                data: ['低阶任务', '高阶任务']
             },
             xAxis: {
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
                 type: 'category',
-                data: ['设定目标', '完成情况']
+                data: ['预检流程','IACC系统故障树','传感器的功能','检修方法与流程']
             },
             yAxis: {
+                min: 70,
+                max: 100,
                 type: 'value',
             },
             series: [
                 {
-                    name: '设定目标',
+                    name: '低阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [d1,d2,d3,d4,d5]
                 },
                 {
-                    name: '完成情况',
+                    name: '高阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [g1,g2,g3,g4,g5]
                 },
             ]
         }
@@ -153,6 +165,18 @@
     }
 
     const setEchartsTwo = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -169,28 +193,30 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['设定目标', '完成情况']
+                data: ['低阶任务', '高阶任务']
             },
             xAxis: {
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
                 type: 'category',
-                data: ['设定目标', '完成情况']
+                data: ['完成接车预检','读取故障码','完成接车预检','制定检修方案','拆装更换部件']
             },
             yAxis: {
+                min: 70,
+                max: 100,
                 type: 'value',
             },
             series: [
                 {
-                    name: '设定目标',
+                    name: '低阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [d1,d2,d3,d4,d5]
                 },
                 {
-                    name: '完成情况',
+                    name: '高阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [g1,g2,g3,g4,g5]
                 },
             ]
         }
@@ -198,6 +224,18 @@
     }
 
     const setEchartsThree = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -214,28 +252,30 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['设定目标', '完成情况']
+                data: ['低阶任务', '高阶任务']
             },
             xAxis: {
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
                 type: 'category',
-                data: ['设定目标', '完成情况']
+                data: ['安全生产意识','专注检测','精益维修','规范验证','新技术应用']
             },
             yAxis: {
+                min: 70,
+                max: 100,
                 type: 'value',
             },
             series: [
                 {
-                    name: '设定目标',
+                    name: '低阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [d1,d2,d3,d4,d5]
                 },
                 {
-                    name: '完成情况',
+                    name: '高阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [g1,g2,g3,g4,g5]
                 },
             ]
         }
@@ -243,6 +283,18 @@
     }
 
     const setEchartsFour = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -259,28 +311,29 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['设定目标', '完成情况']
+                data: ['低阶任务', '高阶任务']
             },
             xAxis: {
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
                 type: 'category',
-                data: ['设定目标', '完成情况']
             },
             yAxis: {
+                min: 70,
+                max: 100,
                 type: 'value',
             },
             series: [
                 {
-                    name: '设定目标',
+                    name: '低阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [d1,d2,d3,d4,d5]
                 },
                 {
-                    name: '完成情况',
+                    name: '高阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [g1,g2,g3,g4,g5]
                 },
             ]
         }
@@ -288,6 +341,18 @@
     }
 
     const setEchartsFive = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -304,28 +369,29 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['设定目标', '完成情况']
+                data: ['低阶任务', '高阶任务']
             },
             xAxis: {
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
                 type: 'category',
-                data: ['设定目标', '完成情况']
             },
             yAxis: {
+                min: 70,
+                max: 100,
                 type: 'value',
             },
             series: [
                 {
-                    name: '设定目标',
+                    name: '低阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [d1,d2,d3,d4,d5]
                 },
                 {
-                    name: '完成情况',
+                    name: '高阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [g1,g2,g3,g4,g5]
                 },
             ]
         }
@@ -333,6 +399,18 @@
     }
 
     const setEchartsSix = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+        
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -349,28 +427,29 @@
                 textStyle: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['设定目标', '完成情况']
+                data: ['低阶任务', '高阶任务']
             },
             xAxis: {
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
                 type: 'category',
-                data: ['设定目标', '完成情况']
             },
             yAxis: {
+                min: 70,
+                max: 100,
                 type: 'value',
             },
             series: [
                 {
-                    name: '设定目标',
+                    name: '低阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [d1,d2,d3,d4,d5]
                 },
                 {
-                    name: '完成情况',
+                    name: '高阶任务',
                     type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
+                    data: [g1,g2,g3,g4,g5]
                 },
             ]
         }

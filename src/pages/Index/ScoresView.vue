@@ -116,6 +116,12 @@
             open(`/screen?id=T-1&key=${id}`);
         } else ElMessage({type: 'warning',message: "请先上传数据！"});
     }
+
+    const readGroupAllStudyInfo = async (id) => {
+        if (DataStore.uploadStatus) {
+            open(`/screen?id=G&key=${id}`);
+        } else ElMessage({type: 'warning',message: "请先上传数据！"});
+    }
 </script>
 
 <template>
@@ -140,6 +146,15 @@
                     <el-icon><FullScreen /></el-icon>
                 </div>
             </div>
+        </div>
+
+        <div style="width: 75vw;margin: 20px auto" class="button-sheet">
+            <div class="upload-box">
+                <input type="file" accept=".xls,.xlsx" @change="upload.handleFileUpload">
+                <el-button type="primary" plain v-if="!DataStore.uploadStatus">上传数据（Excel）</el-button>
+                <el-button type="primary" plain v-if="DataStore.uploadStatus" v-text="`已上传（${DataStore.fileName}）`"></el-button>
+            </div>
+            <el-button type="primary" plain @click="readGroupAllStudyInfo(1)">查看小组学习情况</el-button>
         </div>
 
         <el-table :data="socreList" class="table" border>
@@ -170,12 +185,7 @@
                 </template>
             </el-table-column>
         </el-table>
-        <div class="upload-boxS">
-            <input class="uploadFile" type="file" accept=".xls,.xlsx" @change="upload.handleFileUpload">
-            <el-button class="send" type="primary" plain v-if="!DataStore.uploadStatus">上传数据（Excel）</el-button>
-            <el-button class="send" type="primary" plain v-if="DataStore.uploadStatus" v-text="`已上传（${DataStore.fileName}）`"></el-button>
-        </div>
         
-        <el-button class="send" type="primary" plain @click="sendFrom" v-if="DataStore.uploadStatus" >提交表单</el-button>
+        <el-button class="send" type="primary" plain @click="sendFrom" v-if="DataStore.uploadStatus">提交表单</el-button>
     </div>
 </template>

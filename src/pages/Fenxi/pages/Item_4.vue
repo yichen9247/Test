@@ -2,6 +2,7 @@
     import * as echarts from 'echarts'
     import icons from "@/scripts/icons"
     import random from '@/scripts/random'
+    import data from "@/scripts/data.js"
     import { onBeforeUnmount, onMounted } from "vue"
 
     let charts_one, charts_two, charts_three, charts_four, charts_five, charts_six;
@@ -45,7 +46,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '65%'],
                 itemStyle: {
@@ -57,11 +57,7 @@
                     show: true,
                     color: 'rgba(255, 255, 255)'
                 },
-                data: [
-                    { value: 16, name: '良好率' },
-                    { value: 83, name: '优秀率' },
-                    { value: 32, name: '及格率' },
-                ]
+                data: data[3][0].data
             }]
         };
         charts_one.setOption(option);
@@ -77,7 +73,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['0','65%'],
                 itemStyle: {
@@ -93,11 +88,7 @@
                     orient: 'vertical',
                     left: 'left'
                 },
-                data: [
-                    { value: 16, name: '命令运用' },
-                    { value: 83, name: '创建低模' },
-                    { value: 32, name: '熟悉软件' },
-                ],
+                data: data[3][1].data,
             }]
         };
         charts_two.setOption(option);
@@ -113,7 +104,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '65%'],
                 avoidLabelOverlap: false,
@@ -133,11 +123,7 @@
                     borderRadius: 10,
                     borderColor: '#ffffff'
                 },
-                data: [
-                    { value: 16, name: '良好率' },
-                    { value: 83, name: '优秀率' },
-                    { value: 32, name: '及格率' },
-                ]
+                data: data[3][2].data
             }]
         }
         charts_three.setOption(option);
@@ -155,7 +141,6 @@
                 bottom: '0%',
             },
             series: [{
-                name: 'Access From',
                 type: 'pie',
                 selectedMode: 'single',
                 radius: ['0','65%'],
@@ -170,15 +155,7 @@
                         color: '#235894'
                     }
                 },
-                data: [
-                    { value: 16, name: '抖音' },
-                    { value: 18, name: '快手' },
-                    { value: 30, name: '微博' },
-                    { value: 28, name: '微信' },
-                    { value: 20, name: '知乎' },
-                    { value: 22, name: '闲鱼' },
-
-                ],
+                data: data[3][3].data,
                 itemStyle: {
                     opacity: 0.7,
                     color: {
@@ -208,57 +185,30 @@
             legend: {
                 left: 'center',
                 bottom: '0%',
-                data: ['制作流程','操作规范','模型结构','模型比例']
+                data: data[3][4].legend
             },
             xAxis: {
                 type: 'category',
-                data: ['第一组', '第二组', '第三组', '第四组', '第五组']
+                data: data[3][4].label
             },
             yAxis: {
                 type: 'value'
             },
-            series: [
-                {
-                    name: '制作流程',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '操作规范',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '模型结构',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-                {
-                    name: '模型比例',
-                    type: 'line',
-                    data: [random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive(), random.getRandomIntInclusive()]
-                },
-            ]
+            series: data[3][4].series
         }
         charts_five.setOption(option);
     }
 
     const setEchartsSix = async () => {
-        const rawData = [
-            [100, 302, 301, 334, 390, 330, 320, 390, 330, 320],
-            [320, 132, 101, 134, 90, 230, 210, 90, 230, 210],
-            [220, 182, 191, 234, 290, 330, 310, 290, 330, 310],
-            [150, 212, 201, 154, 190, 330, 410,190, 330, 410],
-        ];
         const totalData = [];
-        for (let i = 0; i < rawData[0].length; ++i) {
+        for (let i = 0; i < data[3][5].data[0].length; ++i) {
             let sum = 0;
-            for (let j = 0; j < rawData.length; ++j) {
-                sum += rawData[j][i];
+            for (let j = 0; j < data[3][5].data.length; ++j) {
+                sum += data[3][5].data[j][i];
             }
             totalData.push(sum);
         }
-        const series = ['会简单布光','分辨不清光','理解不到位','能制作动效'].map((name, sid) => {
+        const series = data[3][5].legend.map((name, sid) => {
             return {
                 name,
                 type: 'bar',
@@ -268,13 +218,16 @@
                     show: true,
                     formatter: (params) => Math.round(params.value * 1000) / 10 + '%'
                 },
-                data: rawData[sid].map((d, did) =>
+                data: data[3][5].data[sid].map((d, did) =>
                     totalData[did] <= 0 ? 0 : d / totalData[did]
                 )
             };
         });
 
         const option = {
+            tooltip: {
+                trigger: 'item'
+            },
             legend: {
                 left: 'center',
                 bottom: '0%',
@@ -290,7 +243,7 @@
             },
             xAxis: {
                 type: 'category',
-                data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组', '第七组', '第八组', '第九组', '第十组']
+                data: data[3][5].label
             },
             series
         }
