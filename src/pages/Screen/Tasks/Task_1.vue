@@ -285,6 +285,24 @@
     }
 
     const setEchartsFour = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+        let d6 = random.getRandomIntInclusiveInter(75,95);
+        let d7 = random.getRandomIntInclusiveInter(75,95);
+        let d8 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+        let g6 = d6 + random.getRandomIntInclusiveInter(1,5);
+        let g7 = d7 + random.getRandomIntInclusiveInter(1,5);
+        let g8 = d8 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -319,12 +337,12 @@
                 {
                     name: '低阶任务',
                     type: 'bar',
-                    data: [random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100)]
+                    data: [d1,d2,d3,d4,d5,d6,d7,d8]
                 },
                 {
                     name: '高阶任务',
                     type: 'bar',
-                    data: [random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100)]
+                    data: [g1,g2,g3,g4,g5,g6,g7,g8]
                 },
             ]
         }
@@ -332,6 +350,24 @@
     }
 
     const setEchartsFive = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+        let d6 = random.getRandomIntInclusiveInter(75,95);
+        let d7 = random.getRandomIntInclusiveInter(75,95);
+        let d8 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+        let g6 = d6 + random.getRandomIntInclusiveInter(1,5);
+        let g7 = d7 + random.getRandomIntInclusiveInter(1,5);
+        let g8 = d8 + random.getRandomIntInclusiveInter(1,5);
+        
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -366,12 +402,12 @@
                 {
                     name: '低阶任务',
                     type: 'bar',
-                    data: [random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100)]
+                    data: [d1,d2,d3,d4,d5,d6,d7,d8]
                 },
                 {
                     name: '高阶任务',
                     type: 'bar',
-                    data: [random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100)]
+                    data: [g1,g2,g3,g4,g5,g6,g7,g8]
                 },
             ]
         }
@@ -379,6 +415,24 @@
     }
 
     const setEchartsSix = async () => {
+        let d1 = random.getRandomIntInclusiveInter(75,95);
+        let d2 = random.getRandomIntInclusiveInter(75,95);
+        let d3 = random.getRandomIntInclusiveInter(75,95);
+        let d4 = random.getRandomIntInclusiveInter(75,95);
+        let d5 = random.getRandomIntInclusiveInter(75,95);
+        let d6 = random.getRandomIntInclusiveInter(75,95);
+        let d7 = random.getRandomIntInclusiveInter(75,95);
+        let d8 = random.getRandomIntInclusiveInter(75,95);
+
+        let g1 = d1 + random.getRandomIntInclusiveInter(1,5);
+        let g2 = d2 + random.getRandomIntInclusiveInter(1,5);
+        let g3 = d3 + random.getRandomIntInclusiveInter(1,5);
+        let g4 = d4 + random.getRandomIntInclusiveInter(1,5);
+        let g5 = d5 + random.getRandomIntInclusiveInter(1,5);
+        let g6 = d6 + random.getRandomIntInclusiveInter(1,5);
+        let g7 = d7 + random.getRandomIntInclusiveInter(1,5);
+        let g8 = d8 + random.getRandomIntInclusiveInter(1,5);
+
         const option = {
             tooltip: {
                 trigger: 'axis'
@@ -413,12 +467,12 @@
                 {
                     name: '低阶任务',
                     type: 'bar',
-                    data: [random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100), random.getRandomIntInclusiveInter(70,100)]
+                    data: [d1,d2,d3,d4,d5,d6,d7,d8]
                 },
                 {
                     name: '高阶任务',
                     type: 'bar',
-                    data: [random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100), random.getRandomIntInclusiveInter(85,100)]
+                    data: [g1,g2,g3,g4,g5,g6,g7,g8]
                 },
             ]
         }
