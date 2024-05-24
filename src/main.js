@@ -1,6 +1,6 @@
 
 import '@/assets/index.css'
-import jQuery from 'jquery';
+import jQuery from 'jquery'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
