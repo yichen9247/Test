@@ -246,7 +246,7 @@
                 axisTick: {
                     alignWithLabel: true
                 },
-                data: data[7][4].lebel,
+                data: data[7][4].label,
             },
             yAxis: {
                 type: 'value'

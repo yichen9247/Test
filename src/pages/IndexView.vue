@@ -10,12 +10,13 @@
     import { useUIStore } from "@/stores/UIStore.js"
     import ClassCenter from "./Index/ClassCenter.vue"
     import ClassInfois from "./Index/ClassInfois.vue"
-    import { School, MessageBox, PieChart, Reading, Refrigerator, Coin } from '@element-plus/icons-vue'
+    import { School, MessageBox, PieChart, Reading, Refrigerator, Coin, OfficeBuilding } from '@element-plus/icons-vue'
 
     const selected = ref(1);
     const UIStore = useUIStore();
-    const menuSelect = async (key, keyPath) => selected.value = key;
+    const openScreen = () => open('screen?id=V&key=8');
     onUnmounted(async () => await UIStore.setIsCollapse(false));
+    const menuSelect = async (key, keyPath) => selected.value = key;
 </script>
 
 <template>
@@ -26,7 +27,7 @@
                     <el-icon><School /></el-icon>
                     <span>课程资源</span>
                 </el-menu-item>
-                <el-menu-item index="2">
+                <el-menu-item @click="openScreen">
                     <el-icon><Refrigerator /></el-icon>
                     <span>同步课堂</span>
                 </el-menu-item>
@@ -42,27 +43,31 @@
                     <el-icon><Coin /></el-icon>
                     <span>学生情况</span>
                 </el-menu-item>
+                <el-menu-item index="7">
+                    <el-icon><OfficeBuilding /></el-icon>
+                    <span>学生评教</span>
+                </el-menu-item>
                 <el-sub-menu index="6">
                     <template #title>
                         <el-icon><PieChart /></el-icon>
                         <span>学情管理</span>
                     </template>
                     <el-menu-item-group class="item-group">
-                        <el-menu-item index="6-1">预检IACC系统不响应</el-menu-item>
-                        <el-menu-item index="6-2">检测IACC电路及通讯故障</el-menu-item>
-                        <el-menu-item index="6-3">维修IACC电路及通讯故障</el-menu-item>
-                        <el-menu-item index="6-4">验证IACC功能正常激活</el-menu-item>
-                        <el-menu-item index="6-5">预检报IACC系统故障</el-menu-item>
-                        <el-menu-item index="6-6">检测IACC控制器及关联系统</el-menu-item>
-                        <el-menu-item index="6-7">维修IACC及关联系统故障</el-menu-item>
-                        <el-menu-item index="6-8">标定和验证IACC系统功能</el-menu-item>
+                        <el-menu-item index="6-1">预检系统不响应</el-menu-item>
+                        <el-menu-item index="6-2">检测系统故障</el-menu-item>
+                        <el-menu-item index="6-3">检测电路及通讯故障</el-menu-item>
+                        <el-menu-item index="6-4">检测控制器及关联系统</el-menu-item>
+                        <el-menu-item index="6-5">维修电路及通讯故障</el-menu-item>
+                        <el-menu-item index="6-6">维修控制器及关联系统</el-menu-item>
+                        <el-menu-item index="6-7">验证功能正常激活</el-menu-item>
+                        <el-menu-item index="6-8">标定和验证系统</el-menu-item>
                     </el-menu-item-group>
                 </el-sub-menu>
             </el-menu>
             <el-container>
                 <el-main >
                     <ClassCenter v-if="selected == 1" />
-                    <ClassInfois v-if="selected == 2" />
+                    <!-- <ClassInfois v-if="selected == 2" /> -->
                     <Attendance v-if="selected == 3" />
                     <ScoresView v-if="selected == 4" />
                     <StudentList v-if="selected == 5" />
