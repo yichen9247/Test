@@ -264,198 +264,197 @@
     });
 
     const saveOneData = async (id) => {
-        if (id == 1) {
-            let dom1 = document.querySelectorAll(".caozuo-one-input");
-            let dom2 = document.querySelectorAll(".jiashi-one-input");
-            let dom3 = document.querySelectorAll(".anquan-one-input");
-            let dom4 = document.querySelectorAll(".jilu-one-input");
-            let dom5 = document.querySelectorAll(".zhunbei-one-input");
-            let dom6 = document.querySelectorAll(".tongxun-one-input");
-            let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
-
-            for (let i=0;i<dom1.length;i++) {
-                max1 += Number(dom1[i].value);
-            }
-            for (let i=0;i<dom2.length;i++) {
-                max2 += Number(dom2[i].value);
-            }
-            for (let i=0;i<dom3.length;i++) {
-                max3 += Number(dom3[i].value);
-            }
-            for (let i=0;i<dom4.length;i++) {
-                max4 += Number(dom4[i].value);
-            }
-            for (let i=0;i<dom5.length;i++) {
-                max5 += Number(dom5[i].value);
-            }
-            for (let i=0;i<dom6.length;i++) {
-                max6 += Number(dom6[i].value);
-            }
-
-            data.push(max1/6.0);
-            data.push(max2/6.0);
-            data.push(max3/6.0);
-            data.push(max4/6.0);
-            data.push(max5/6.0);
-            data.push(max6/6.0);
-            setEchartsOne(data);
-        }
-
-        if (id == 2) {
-            let dom1 = document.querySelectorAll(".caozuo-two-input");
-            let dom2 = document.querySelectorAll(".jiashi-two-input");
-            let dom3 = document.querySelectorAll(".anquan-two-input");
-            let dom4 = document.querySelectorAll(".jilu-two-input");
-            let dom5 = document.querySelectorAll(".zhunbei-two-input");
-            let dom6 = document.querySelectorAll(".tongxun-two-input");
-            let max1 = [],max2 = [],max3 = [],max4 = [],max5 = [],max6 = [];
-
-            for (let i=0;i<dom1.length;i++) {
-                max1.push(dom1[i].value);
-            }
-            for (let i=0;i<dom2.length;i++) {
-                max2.push(dom2[i].value);
-            }
-            for (let i=0;i<dom3.length;i++) {
-                max3.push(dom3[i].value);
-            }
-            for (let i=0;i<dom4.length;i++) {
-                max4.push(dom4[i].value);
-            }
-            for (let i=0;i<dom5.length;i++) {
-                max5.push(dom5[i].value);
-            }
-            for (let i=0;i<dom6.length;i++) {
-                max6.push(dom6[i].value);
-            }
-
-            setEchartsTwo(max1,max2,max3,max4,max5,max6);
-        }
-
-        if (id == 3) {
-            let dom1 = document.querySelectorAll(".one-three-input");
-            let dom2 = document.querySelectorAll(".two-three-input");
-            let dom3 = document.querySelectorAll(".three-three-input");
-            let dom4 = document.querySelectorAll(".four-three-input");
-            let dom5 = document.querySelectorAll(".five-three-input");
-            let dom6 = document.querySelectorAll(".six-three-input");
-            let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
-
-            for (let i=0;i<dom1.length;i++) {
-                max1 += Number(dom1[i].value);
-            }
-            for (let i=0;i<dom2.length;i++) {
-                max2 += Number(dom2[i].value);
-            }
-            for (let i=0;i<dom3.length;i++) {
-                max3 += Number(dom3[i].value);
-            }
-            for (let i=0;i<dom4.length;i++) {
-                max4 += Number(dom4[i].value);
-            }
-            for (let i=0;i<dom5.length;i++) {
-                max5 += Number(dom5[i].value);
-            }
-            for (let i=0;i<dom6.length;i++) {
-                max6 += Number(dom6[i].value);
-            }
-
-            data.push(max1/6.0);
-            data.push(max2/6.0);
-            data.push(max3/6.0);
-            data.push(max4/6.0);
-            data.push(max5/6.0);
-            data.push(max6/6.0);
-            setEchartsThree(data);
-        }
-
-        if (id == 4) {
-            let dom1 = document.querySelectorAll(".one-four-input");
-            let dom2 = document.querySelectorAll(".two-four-input");
-            let dom3 = document.querySelectorAll(".three-four-input");
-            let dom4 = document.querySelectorAll(".four-four-input");
-            let dom5 = document.querySelectorAll(".five-four-input");
-            let dom6 = document.querySelectorAll(".six-four-input");
-            let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
-
-            for (let i=0;i<dom1.length;i++) {
-                max1 += Number(dom1[i].value);
-            }
-            for (let i=0;i<dom2.length;i++) {
-                max2 += Number(dom2[i].value);
-            }
-            for (let i=0;i<dom3.length;i++) {
-                max3 += Number(dom3[i].value);
-            }
-            for (let i=0;i<dom4.length;i++) {
-                max4 += Number(dom4[i].value);
-            }
-            for (let i=0;i<dom5.length;i++) {
-                max5 += Number(dom5[i].value);
-            }
-            for (let i=0;i<dom6.length;i++) {
-                max6 += Number(dom6[i].value);
-            }
-
-            data.push(max1/6.0);
-            data.push(max2/6.0);
-            data.push(max3/6.0);
-            data.push(max4/6.0);
-            data.push(max5/6.0);
-            data.push(max6/6.0);
-            setEchartsFour(data);
-        }
-
-        if (id == 5) {
-            let dom1 = document.querySelectorAll(".one-five-input");
-            let dom2 = document.querySelectorAll(".two-five-input");
-            let dom3 = document.querySelectorAll(".three-five-input");
-            let dom4 = document.querySelectorAll(".four-five-input");
-            let dom5 = document.querySelectorAll(".five-five-input");
-            let dom6 = document.querySelectorAll(".six-five-input");
-            let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
-
-            for (let i=0;i<dom1.length;i++) {
-                max1 += Number(dom1[i].value);
-            }
-            for (let i=0;i<dom2.length;i++) {
-                max2 += Number(dom2[i].value);
-            }
-            for (let i=0;i<dom3.length;i++) {
-                max3 += Number(dom3[i].value);
-            }
-            for (let i=0;i<dom4.length;i++) {
-                max4 += Number(dom4[i].value);
-            }
-            for (let i=0;i<dom5.length;i++) {
-                max5 += Number(dom5[i].value);
-            }
-            for (let i=0;i<dom6.length;i++) {
-                max6 += Number(dom6[i].value);
-            }
-
-            data.push(max1/6.0);
-            data.push(max2/6.0);
-            data.push(max3/6.0);
-            data.push(max4/6.0);
-            data.push(max5/6.0);
-            data.push(max6/6.0);
-            setEchartsFive(data);
-        }
-
-        if (id == 6) {
-            let data1 = document.querySelector(".six-input-one").value;
-            let data2 = document.querySelector(".six-input-two").value;
-
-            console.log(data1)
-
-            startStudent.value = [
-                { zu: '技能之星', mz: data1 },
-                { zu: '安全之星', mz: data2 },
-            ]
-        }
-        
         settingDialog.value = false;
+        setTimeout(() => {
+            if (id == 1) {
+                let dom1 = document.querySelectorAll(".caozuo-one-input");
+                let dom2 = document.querySelectorAll(".jiashi-one-input");
+                let dom3 = document.querySelectorAll(".anquan-one-input");
+                let dom4 = document.querySelectorAll(".jilu-one-input");
+                let dom5 = document.querySelectorAll(".zhunbei-one-input");
+                let dom6 = document.querySelectorAll(".tongxun-one-input");
+                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
+
+                for (let i=0;i<dom1.length;i++) {
+                    max1 += Number(dom1[i].value);
+                }
+                for (let i=0;i<dom2.length;i++) {
+                    max2 += Number(dom2[i].value);
+                }
+                for (let i=0;i<dom3.length;i++) {
+                    max3 += Number(dom3[i].value);
+                }
+                for (let i=0;i<dom4.length;i++) {
+                    max4 += Number(dom4[i].value);
+                }
+                for (let i=0;i<dom5.length;i++) {
+                    max5 += Number(dom5[i].value);
+                }
+                for (let i=0;i<dom6.length;i++) {
+                    max6 += Number(dom6[i].value);
+                }
+
+                data.push(max1/6.0);
+                data.push(max2/6.0);
+                data.push(max3/6.0);
+                data.push(max4/6.0);
+                data.push(max5/6.0);
+                data.push(max6/6.0);
+                setEchartsOne(data);
+            }
+
+            if (id == 2) {
+                let dom1 = document.querySelectorAll(".caozuo-two-input");
+                let dom2 = document.querySelectorAll(".jiashi-two-input");
+                let dom3 = document.querySelectorAll(".anquan-two-input");
+                let dom4 = document.querySelectorAll(".jilu-two-input");
+                let dom5 = document.querySelectorAll(".zhunbei-two-input");
+                let dom6 = document.querySelectorAll(".tongxun-two-input");
+                let max1 = [],max2 = [],max3 = [],max4 = [],max5 = [],max6 = [];
+
+                for (let i=0;i<dom1.length;i++) {
+                    max1.push(dom1[i].value);
+                }
+                for (let i=0;i<dom2.length;i++) {
+                    max2.push(dom2[i].value);
+                }
+                for (let i=0;i<dom3.length;i++) {
+                    max3.push(dom3[i].value);
+                }
+                for (let i=0;i<dom4.length;i++) {
+                    max4.push(dom4[i].value);
+                }
+                for (let i=0;i<dom5.length;i++) {
+                    max5.push(dom5[i].value);
+                }
+                for (let i=0;i<dom6.length;i++) {
+                    max6.push(dom6[i].value);
+                }
+
+                setEchartsTwo(max1,max2,max3,max4,max5,max6);
+            }
+
+            if (id == 3) {
+                let dom1 = document.querySelectorAll(".one-three-input");
+                let dom2 = document.querySelectorAll(".two-three-input");
+                let dom3 = document.querySelectorAll(".three-three-input");
+                let dom4 = document.querySelectorAll(".four-three-input");
+                let dom5 = document.querySelectorAll(".five-three-input");
+                let dom6 = document.querySelectorAll(".six-three-input");
+                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
+
+                for (let i=0;i<dom1.length;i++) {
+                    max1 += Number(dom1[i].value);
+                }
+                for (let i=0;i<dom2.length;i++) {
+                    max2 += Number(dom2[i].value);
+                }
+                for (let i=0;i<dom3.length;i++) {
+                    max3 += Number(dom3[i].value);
+                }
+                for (let i=0;i<dom4.length;i++) {
+                    max4 += Number(dom4[i].value);
+                }
+                for (let i=0;i<dom5.length;i++) {
+                    max5 += Number(dom5[i].value);
+                }
+                for (let i=0;i<dom6.length;i++) {
+                    max6 += Number(dom6[i].value);
+                }
+
+                data.push(max1/6.0);
+                data.push(max2/6.0);
+                data.push(max3/6.0);
+                data.push(max4/6.0);
+                data.push(max5/6.0);
+                data.push(max6/6.0);
+                setEchartsThree(data);
+            }
+
+            if (id == 4) {
+                let dom1 = document.querySelectorAll(".one-four-input");
+                let dom2 = document.querySelectorAll(".two-four-input");
+                let dom3 = document.querySelectorAll(".three-four-input");
+                let dom4 = document.querySelectorAll(".four-four-input");
+                let dom5 = document.querySelectorAll(".five-four-input");
+                let dom6 = document.querySelectorAll(".six-four-input");
+                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
+
+                for (let i=0;i<dom1.length;i++) {
+                    max1 += Number(dom1[i].value);
+                }
+                for (let i=0;i<dom2.length;i++) {
+                    max2 += Number(dom2[i].value);
+                }
+                for (let i=0;i<dom3.length;i++) {
+                    max3 += Number(dom3[i].value);
+                }
+                for (let i=0;i<dom4.length;i++) {
+                    max4 += Number(dom4[i].value);
+                }
+                for (let i=0;i<dom5.length;i++) {
+                    max5 += Number(dom5[i].value);
+                }
+                for (let i=0;i<dom6.length;i++) {
+                    max6 += Number(dom6[i].value);
+                }
+
+                data.push(max1/6.0);
+                data.push(max2/6.0);
+                data.push(max3/6.0);
+                data.push(max4/6.0);
+                data.push(max5/6.0);
+                data.push(max6/6.0);
+                setEchartsFour(data);
+            }
+
+            if (id == 5) {
+                let dom1 = document.querySelectorAll(".one-five-input");
+                let dom2 = document.querySelectorAll(".two-five-input");
+                let dom3 = document.querySelectorAll(".three-five-input");
+                let dom4 = document.querySelectorAll(".four-five-input");
+                let dom5 = document.querySelectorAll(".five-five-input");
+                let dom6 = document.querySelectorAll(".six-five-input");
+                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
+
+                for (let i=0;i<dom1.length;i++) {
+                    max1 += Number(dom1[i].value);
+                }
+                for (let i=0;i<dom2.length;i++) {
+                    max2 += Number(dom2[i].value);
+                }
+                for (let i=0;i<dom3.length;i++) {
+                    max3 += Number(dom3[i].value);
+                }
+                for (let i=0;i<dom4.length;i++) {
+                    max4 += Number(dom4[i].value);
+                }
+                for (let i=0;i<dom5.length;i++) {
+                    max5 += Number(dom5[i].value);
+                }
+                for (let i=0;i<dom6.length;i++) {
+                    max6 += Number(dom6[i].value);
+                }
+
+                data.push(max1/6.0);
+                data.push(max2/6.0);
+                data.push(max3/6.0);
+                data.push(max4/6.0);
+                data.push(max5/6.0);
+                data.push(max6/6.0);
+                setEchartsFive(data);
+            }
+
+            if (id == 6) {
+                let data1 = document.querySelector(".six-input-one").value;
+                let data2 = document.querySelector(".six-input-two").value;
+
+                startStudent.value = [
+                    { zu: '技能之星', mz: data1 },
+                    { zu: '安全之星', mz: data2 },
+                ]
+            }
+        }, 1500);
         ElMessage({type: 'success',message: '保存更改成功！'});
     }
 
