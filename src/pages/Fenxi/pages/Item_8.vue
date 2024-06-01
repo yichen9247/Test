@@ -86,7 +86,7 @@
                 barWidth: '60%',
                 label: {
                     show: true,
-                    formatter: (params) => Math.round(params.value * 1000) / 10 + '%'
+                    formatter: (params) => Math.floor(Math.round(params.value * 1000) / 10) + '%'
                 },
                 data: data[7][1].data[sid].map((d, did) =>
                     totalData[did] <= 0 ? 0 : d / totalData[did]
@@ -123,10 +123,6 @@
         const option = {
             tooltip: {
                 trigger: 'item'
-            },
-            legend: {
-                left: 'center',
-                bottom: '0%',
             },
             series: [{
                 type: 'pie',

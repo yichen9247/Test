@@ -1,0 +1,197 @@
+body {
+  font-size: 12px;
+  background-color: #06164A;
+}
+header {
+  height: 10vh;
+  color: #81E7ED;
+  font-size: 1.25vw;
+  text-align: center;
+}
+header h1 {
+  line-height: 10vh;
+}
+section {
+  padding: 1vh 1vw;
+  display: flex;
+  width: calc(100% - 2vw);
+  height: calc(100% - 13vh);
+  justify-content: space-between;
+}
+section div.column {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section div.column:nth-child(2) {
+  width: 48%;
+}
+section div.column div.flex {
+  width: 100%;
+  height: 48%;
+  position: relative;
+}
+section div.column div.flex div.panelx {
+  width: 48.8%;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+section div.column div.flex div.panelx:nth-child(2) {
+  float: right;
+}
+section div.column div.flex div.panelx::before {
+  top: 0;
+  left: 0;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 20%;
+  position: absolute;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+}
+section div.column div.flex div.panelx::after {
+  top: 0;
+  right: 0;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 20%;
+  position: absolute;
+  border-top: 2px solid #02a6b5;
+  border-right: 2px solid #02a6b5;
+}
+section div.column div.panel {
+  width: 100%;
+  height: 48%;
+  position: relative;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+section div.column div.panel::before {
+  top: 0;
+  left: 0;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 20%;
+  position: absolute;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+}
+section div.column div.panel::after {
+  top: 0;
+  right: 0;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 20%;
+  position: absolute;
+  border-top: 2px solid #02a6b5;
+  border-right: 2px solid #02a6b5;
+}
+section div.column div.panel-footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
+section div.column div.panel-footer::before {
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 20%;
+  border-left: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+}
+section div.column div.panel-footer::after {
+  right: 0;
+  bottom: 0;
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 20%;
+  border-right: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+}
+section div.column div.panel,
+section div.column div.panelx {
+  overflow: hidden;
+}
+section div.column div.panel h2,
+section div.column div.panelx h2 {
+  margin: 1vh 0;
+  font-size: 1.2vw;
+  color: #81E7ED;
+  font-weight: 600;
+  text-align: center;
+}
+section div.column div.panel div.canvas,
+section div.column div.panelx div.canvas {
+  width: 100%;
+  height: calc(100% - 3vh);
+}
+section div.column div.panel div.image-box,
+section div.column div.panelx div.image-box {
+  width: 100%;
+  height: 55%;
+  margin: 1vh 0;
+  display: flex;
+}
+section div.column div.panel div.image-box span.el-avatar,
+section div.column div.panelx div.image-box span.el-avatar {
+  width: 150px;
+  height: 95%;
+  display: flex;
+  margin: auto;
+  border-radius: 8px;
+}
+section div.column div.panel div.image-box span.el-avatar img,
+section div.column div.panelx div.image-box span.el-avatar img {
+  width: 100%;
+  height: 100%;
+}
+section div.column div.panel div.image-box svg,
+section div.column div.panelx div.image-box svg {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+section div.column div.panel div.image-box img.avatar,
+section div.column div.panelx div.image-box img.avatar {
+  width: 150px;
+  height: 95%;
+  margin: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+section div.column div.panel p.user-name,
+section div.column div.panelx p.user-name {
+  font-size: 1vw;
+  color: #ffeb7b;
+  text-align: center;
+}
+section div.column div.panel p.user-desc,
+section div.column div.panelx p.user-desc {
+  margin: 2vh 0;
+  font-size: 1vw;
+  color: #ffeb7b;
+  text-align: center;
+}
+p.post-text {
+  width: 95%;
+  font-size: 15px;
+  color: #ffffff;
+  margin: 20px auto;
+  text-indent: 2em;
+  line-height: 30px;
+}

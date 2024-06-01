@@ -25,9 +25,14 @@ const router = createRouter({
       component: () => import("@/pages/Index/TasklistView.vue")
     },
     {
-      path: '/person',
+      path: '/person/:id',
       name: 'person',
       component: () => import("@/pages/Person/Index.vue")
+    },
+    {
+      path: '/classreport/:id',
+      name: 'classreport',
+      component: () => import("@/pages/ClassReport/Index.vue")
     }
   ]
 })

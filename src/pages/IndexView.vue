@@ -9,13 +9,22 @@
     import ProjectView from "./Fenxi/ProjectView.vue"
     import { useUIStore } from "@/stores/UIStore.js"
     import ClassCenter from "./Index/ClassCenter.vue"
+    // eslint-disable-next-line no-unused-vars
     import ClassInfois from "./Index/ClassInfois.vue"
+    import { useDataStore } from "@/stores/DataStore.js"
     import { School, MessageBox, PieChart, Reading, Refrigerator, Coin, OfficeBuilding } from '@element-plus/icons-vue'
 
     const selected = ref(1);
     const UIStore = useUIStore();
-    const openScreen = () => open('screen?id=V&key=8');
+    const DataStore = useDataStore();
+    const openScreen = () => {
+        if (DataStore.uploadStatus) {
+            open('screen?id=V&key=8');
+        // eslint-disable-next-line no-undef
+        } else ElMessage({type: 'warning',message: "请先上传数据！"});
+    };
     onUnmounted(async () => await UIStore.setIsCollapse(false));
+    // eslint-disable-next-line no-unused-vars
     const menuSelect = async (key, keyPath) => selected.value = key;
 </script>
 

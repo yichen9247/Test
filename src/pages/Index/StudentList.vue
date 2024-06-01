@@ -37,7 +37,7 @@
 
     const readStudentDraws = async (id) => {
         if (DataStore.uploadStatus) {
-            open(`/person?key=${id.id}`);
+            open(`/person/${id.id}`);
         } else ElMessage({type: 'warning',message: "请先上传数据！"});
     }
 </script>

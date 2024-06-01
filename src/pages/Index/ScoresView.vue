@@ -122,6 +122,12 @@
             open(`/screen?id=G&key=${id}`);
         } else ElMessage({type: 'warning',message: "请先上传数据！"});
     }
+
+    const readGroupClassStudyInfo = async (id) => {
+        if (DataStore.uploadStatus) {
+            open(`/classreport/${id}`);
+        } else ElMessage({type: 'warning',message: "请先上传数据！"});
+    }
 </script>
 
 <template>
@@ -178,9 +184,10 @@
                     <el-cascader v-model="socreList[scope.$index].p_value" :options="p_grades" />
                 </template>
             </el-table-column>
-            <el-table-column label="更多操作" width="280">
+            <el-table-column label="更多操作" width="360">
                 <template #default="scope" >
                     <el-button size="small" type="success" @click="readGroupStudyInfo(scope.$index+1)">查看任务分析</el-button>
+                    <el-button size="small" type="warning" @click="readGroupClassStudyInfo(scope.$index+1)">查看课堂分析</el-button>
                     <el-button size="small" type="primary" @click="readGroupStudyAsde(scope.$index+1)">查看增值</el-button>
                 </template>
             </el-table-column>
