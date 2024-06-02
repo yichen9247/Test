@@ -9,7 +9,6 @@
     import ProjectView from "./Fenxi/ProjectView.vue"
     import { useUIStore } from "@/stores/UIStore.js"
     import ClassCenter from "./Index/ClassCenter.vue"
-    // eslint-disable-next-line no-unused-vars
     import ClassInfois from "./Index/ClassInfois.vue"
     import { useDataStore } from "@/stores/DataStore.js"
     import { School, MessageBox, PieChart, Reading, Refrigerator, Coin, OfficeBuilding } from '@element-plus/icons-vue'
@@ -76,10 +75,10 @@
             <el-container>
                 <el-main >
                     <ClassCenter v-if="selected == 1" />
-                    <!-- <ClassInfois v-if="selected == 2" /> -->
                     <Attendance v-if="selected == 3" />
                     <ScoresView v-if="selected == 4" />
                     <StudentList v-if="selected == 5" />
+                    <ClassInfois v-if="selected == 7" />
                     <ProjectView :id="selected" />
                 </el-main>
             </el-container>
