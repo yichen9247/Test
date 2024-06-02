@@ -11,7 +11,7 @@
     import ClassCenter from "./Index/ClassCenter.vue"
     import ClassInfois from "./Index/ClassInfois.vue"
     import { useDataStore } from "@/stores/DataStore.js"
-    import { School, MessageBox, PieChart, Reading, Refrigerator, Coin, OfficeBuilding } from '@element-plus/icons-vue'
+    import { School, MessageBox, PieChart, Reading, Refrigerator, Coin, OfficeBuilding, Orange } from '@element-plus/icons-vue'
 
     const selected = ref(1);
     const UIStore = useUIStore();
@@ -55,6 +55,10 @@
                     <el-icon><OfficeBuilding /></el-icon>
                     <span>学生评教</span>
                 </el-menu-item>
+                <el-menu-item index="8">
+                    <el-icon><Orange /></el-icon>
+                    <span>学生列表</span>
+                </el-menu-item>
                 <el-sub-menu index="6">
                     <template #title>
                         <el-icon><PieChart /></el-icon>
@@ -74,12 +78,13 @@
             </el-menu>
             <el-container>
                 <el-main >
+                    <ProjectView :id="selected" />
                     <ClassCenter v-if="selected == 1" />
                     <Attendance v-if="selected == 3" />
                     <ScoresView v-if="selected == 4" />
                     <StudentList v-if="selected == 5" />
                     <ClassInfois v-if="selected == 7" />
-                    <ProjectView :id="selected" />
+                    <ClassInfois v-if="selected == 8" />
                 </el-main>
             </el-container>
         </el-container>
