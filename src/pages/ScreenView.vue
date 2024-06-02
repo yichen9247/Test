@@ -1,6 +1,6 @@
 
 <script setup>
-    import "@/scripts/canvas.js"
+    // import "@/scripts/canvas.js"
     import "./assets/ScreenView.css"
     import { onMounted, ref } from "vue"
     import Item_1 from "./Screen/Item_1.vue"
@@ -14,6 +14,7 @@
     import Item_P from "./Screen/Item_P.vue"
     import Item_A from "./Screen/Item_A.vue"
     import Item_V from "./Screen/Item_V.vue"
+    import Item_S from "./Screen/Item_S.vue"
     import Item_G from "./Screen/Item_G.vue"
     import Task_1 from "./Screen/Tasks/Task_1.vue"
     import Task_2 from "./Screen/Tasks/Task_2.vue"
@@ -44,6 +45,7 @@
     <Item_8 v-if="pageId == '8'" />
     
     <Item_V v-if="pageId == 'V'" :id="{ someProp: pageKey }" />
+    <Item_S v-if="pageId == 'S'" :id="{ someProp: pageKey }" />
     <Item_G v-if="pageId == 'G'" :id="{ someProp: pageKey }" />
     <Item_P v-if="pageId == 'P'" :id="{ someProp: pageKey }" />
     <Item_A v-if="pageId == 'A'" :id="{ someProp: pageKey }" />

@@ -255,7 +255,6 @@
         let studentListVarious = [];
 
         for (let i=0;i<6;i++) {
-            console.log(1)
             studentListVarious.push({
                 name: '刘强东'
             });

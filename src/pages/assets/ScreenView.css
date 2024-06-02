@@ -90,11 +90,11 @@ div.screen-container div.main-body {
   height: calc(100% - 12.5vh);
 }
 div.screen-container div.main-body div.body-line {
+  flex: 1;
   height: 50%;
   padding: 0 1vw;
   display: flex;
   width: calc(100% - 2vw);
-  justify-content: space-between;
 }
 div.screen-container div.main-body div.body-line div.line-container {
   width: 33.33%;
