@@ -134,6 +134,12 @@
             open(`/classreport/${id}`);
         } else ElMessage({type: 'warning',message: "请先上传数据！"});
     }
+
+    const readGuoChengStudyInfo = async (id) => {
+        if (DataStore.uploadStatus) {
+            open(`/screen?id=E&key=${id}`);
+        } else ElMessage({type: 'warning',message: "请先上传数据！"});
+    }
 </script>
 
 <template>
@@ -167,6 +173,7 @@
                 <el-button type="primary" plain v-if="DataStore.uploadStatus" v-text="`已上传（${DataStore.fileName}）`"></el-button>
             </div>
             <el-button type="primary" plain @click="readGroupAllStudyInfo(1)">查看小组学习情况</el-button>
+            <el-button type="primary" plain @click="readGuoChengStudyInfo(2)">查看过程评价</el-button>
         </div>
 
         <el-table :data="socreList" class="table" border>

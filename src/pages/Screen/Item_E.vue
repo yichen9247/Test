@@ -24,6 +24,7 @@
         charts_three = echarts.init(document.querySelector(".canvas-three"));
         charts_four = echarts.init(document.querySelector(".canvas-four"));
         charts_five = echarts.init(document.querySelector(".canvas-five"));
+        charts_six = echarts.init(document.querySelector(".canvas-six"));
     }
 
     const AttendanceHeadRef = ref(null);
@@ -50,9 +51,10 @@
     const setAllCanvas = async () => {
         await setEchartsOne([0,0,0,0,0,0]);
         await setEchartsThree([0,0,0,0,0,0]);
-        await setEchartsFour([0,0,0,0]);
-        await setEchartsFive([0,0,0,0]);
-        await setEchartsTwo([0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]);
+        await setEchartsFour([0,0,0,0,0,0]);
+        await setEchartsFive([0,0,0,0,0,0]);
+        await setEchartsSix([0,0,0,0,0,0]);
+        await setEchartsTwo([0,0,0,0,0,0]);
     }
 
     const setEchartsOne = async (data) => {
@@ -73,6 +75,7 @@
                 data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
+                max: 5,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
@@ -104,6 +107,7 @@
                 data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
+                max: 20,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
@@ -135,6 +139,7 @@
                 data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
+                max: 35,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
@@ -163,9 +168,10 @@
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['职业素养', '知识结构', '技能水平', '创新能力']
+                data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
+                max: 20,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
@@ -190,11 +196,12 @@
                 bottom: '10%',
             },
             xAxis: {
+                max: 20,
                 type: 'category',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['职业素养', '知识结构', '技能水平', '创新能力']
+                data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
                 type: 'value',
@@ -208,6 +215,38 @@
             }]
         };
         charts_five.setOption(option);
+    }
+
+    const setEchartsSix = async (data) => {
+        let option = {
+            tooltip: {
+                trigger: 'item'
+            },
+            grid: {
+                left: '8%',
+                right: '4%',
+                bottom: '10%',
+            },
+            xAxis: {
+                type: 'category',
+                axisLabel: {
+                    color: 'rgba(255, 255, 255)'
+                },
+                data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
+            },
+            yAxis: {
+                max: 100,
+                type: 'value',
+                axisLabel: {
+                    color: 'rgba(255, 255, 255)'
+                },
+            },
+            series: [{
+                data: data,
+                type: 'bar'
+            }]
+        };
+        charts_six.setOption(option);
     }
 
     onMounted(async () => {
@@ -425,7 +464,7 @@
 
     <a-modal v-model:open="settingDialog" width="1260px" :title="null" :closable="false" :footer="false">
         <el-tabs v-model="current" class="demo-tabs">
-            <el-tab-pane label="服务接待环节" name="one">
+            <el-tab-pane label="作业前准备" name="one">
                 <div class="panel-content" >
                     <el-table :data="[0]" style="width: 100%">
                         <el-table-column label="第一组">
@@ -463,7 +502,7 @@
                 </div>
             </el-tab-pane>
             
-            <el-tab-pane label="预检确认环节" name="two">
+            <el-tab-pane label="部件拆卸" name="two">
                 <div class="panel-content" >
                     <el-table :data="[0]" style="width: 100%">
                         <el-table-column label="第一组">
@@ -501,7 +540,7 @@
                 </div>
             </el-tab-pane>
 
-            <el-tab-pane label="故障分析环节" name="three">
+            <el-tab-pane label="故障检测" name="three">
                 <div class="panel-content" >
                     <el-table :data="[0]" style="width: 100%">
                         <el-table-column label="第一组">
@@ -539,27 +578,37 @@
                 </div>
             </el-tab-pane>
 
-            <el-tab-pane label="协定准备得分情况" name="four">
+            <el-tab-pane label="故障分析" name="four">
                 <div class="panel-content">
                     <el-table :data="[0]" style="width: 100%">
-                        <el-table-column label="职业素养">
+                        <el-table-column label="第一组">
                             <template #default="scope">
                                 <input class="four-one-input" type="number" :value="0">
                             </template>
                         </el-table-column>
-                        <el-table-column label="知识结构">
+                        <el-table-column label="第二组">
                             <template #default="scope">
                                 <input class="four-two-input" type="number" :value="0">
                             </template>
                         </el-table-column>
-                        <el-table-column label="技能水平">
+                        <el-table-column label="第三组">
                             <template #default="scope">
                                 <input class="four-three-input" type="number" :value="0">
                             </template>
                         </el-table-column>
-                        <el-table-column label="创新能力">
+                        <el-table-column label="第四组">
                             <template #default="scope">
                                 <input class="four-four-input" type="number" :value="0">
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="第五组">
+                            <template #default="scope">
+                                <input class="four-five-input" type="number" :value="0">
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="第六组">
+                            <template #default="scope">
+                                <input class="four-six-input" type="number" :value="0">
                             </template>
                         </el-table-column>
                     </el-table>
@@ -567,27 +616,37 @@
                 </div>
             </el-tab-pane>
 
-            <el-tab-pane label="小组合作完成任务情况" name="five">
+            <el-tab-pane label="课堂表现" name="five">
                 <div class="panel-content">
                     <el-table :data="[0]" style="width: 100%">
-                        <el-table-column label="职业素养">
+                        <el-table-column label="第一组">
                             <template #default="scope">
                                 <input class="five-one-input" type="number" :value="0">
                             </template>
                         </el-table-column>
-                        <el-table-column label="知识结构">
+                        <el-table-column label="第二组">
                             <template #default="scope">
                                 <input class="five-two-input" type="number" :value="0">
                             </template>
                         </el-table-column>
-                        <el-table-column label="技能水平">
+                        <el-table-column label="第三组">
                             <template #default="scope">
                                 <input class="five-three-input" type="number" :value="0">
                             </template>
                         </el-table-column>
-                        <el-table-column label="创新能力">
+                        <el-table-column label="第四组">
                             <template #default="scope">
                                 <input class="five-four-input" type="number" :value="0">
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="第五组">
+                            <template #default="scope">
+                                <input class="five-five-input" type="number" :value="0">
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="第六组">
+                            <template #default="scope">
+                                <input class="five-six-input" type="number" :value="0">
                             </template>
                         </el-table-column>
                     </el-table>
@@ -595,16 +654,36 @@
                 </div>
             </el-tab-pane>
 
-            <el-tab-pane label="小组优秀成员" name="six">
+            <el-tab-pane label="各组综合得分" name="six">
                 <el-table :data="[0]" style="width: 100%">
-                    <el-table-column label="技能之星">
+                    <el-table-column label="第一组">
                         <template #default="scope">
-                            <input class="six-input-one" type="text" :value="'任思旭'">
+                            <input class="six-one-input" type="number" :value="0">
                         </template>
                     </el-table-column>
-                    <el-table-column label="安全之星">
+                    <el-table-column label="第二组">
                         <template #default="scope">
-                            <input class="six-input-two" type="text" :value="'苏思元'">
+                            <input class="six-two-input" type="number" :value="0">
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="第三组">
+                        <template #default="scope">
+                            <input class="six-three-input" type="number" :value="0">
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="第四组">
+                        <template #default="scope">
+                            <input class="six-four-input" type="number" :value="0">
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="第五组">
+                        <template #default="scope">
+                            <input class="six-five-input" type="number" :value="0">
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="第六组">
+                        <template #default="scope">
+                            <input class="six-six-input" type="number" :value="0">
                         </template>
                     </el-table-column>
                 </el-table>
@@ -628,7 +707,7 @@
                     <img class="title-img" src="../../assets/image/mainl-3.png" alt="" draggable="false">
                     <span class="site-title">{{ UIStore.siteTitles }}</span>
                     <span class="site-desc">
-                        小组课堂评价&nbsp;&nbsp;&nbsp;{{ ScreenStore.taskList.find(item => item.id == Number(id.someProp)).name }}
+                        小组过程评价&nbsp;&nbsp;&nbsp;{{ ScreenStore.taskList.find(item => item.id == Number(id.someProp)).name }}
                     </span>
                 </div>
                 <div style="display: flex;">
@@ -646,7 +725,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">服务接待环节评分</p>
+                            <p class="head-title">作业前准备</p>
                         </div>
                         <div class="box-body">
                             <img src="../../assets/image/bg02.png" alt="" draggable="false">
@@ -658,7 +737,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">预检确认环节评分</p>
+                            <p class="head-title">部件拆卸</p>
                         </div>
                         <div class="box-body">
                             <img src="../../assets/image/bg02.png" alt="" draggable="false">
@@ -670,7 +749,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">故障分析环节评分</p>
+                            <p class="head-title">故障检测</p>
                         </div>
                         <div class="box-body">
                             <img src="../../assets/image/bg02.png" alt="" draggable="false">
@@ -685,7 +764,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">平均自评得分</p>
+                            <p class="head-title">故障分析</p>
                         </div>
                         <div class="box-body">
                             <img src="../../assets/image/bg02.png" alt="" draggable="false">
@@ -697,7 +776,7 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">综合测评得分</p>
+                            <p class="head-title">课堂表现</p>
                         </div>
                         <div class="box-body">
                             <img src="../../assets/image/bg02.png" alt="" draggable="false">
@@ -709,14 +788,11 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">小组最佳个人得分</p>
+                            <p class="head-title">各组综合得分</p>
                         </div>
                         <div class="box-body">
                             <img src="../../assets/image/bg02.png" alt="" draggable="false">
-                            <el-table :data="startStudent" style="width: 100%;margin-top:0" class="table" v-if="startStudent != null">
-                                <el-table-column prop="zu"  width="180" />
-                                <el-table-column prop="mz"  width="180" />
-                            </el-table>
+                            <div class="canvas-box canvas-six"></div>
                         </div>
                     </div>
                 </div>

@@ -14,6 +14,7 @@
     import Item_P from "./Screen/Item_P.vue"
     import Item_A from "./Screen/Item_A.vue"
     import Item_V from "./Screen/Item_V.vue"
+    import Item_E from "./Screen/Item_E.vue"
     import Item_S from "./Screen/Item_S.vue"
     import Item_G from "./Screen/Item_G.vue"
     import Task_1 from "./Screen/Tasks/Task_1.vue"
@@ -48,6 +49,7 @@
     <Item_S v-if="pageId == 'S'" :id="{ someProp: pageKey }" />
     <Item_G v-if="pageId == 'G'" :id="{ someProp: pageKey }" />
     <Item_P v-if="pageId == 'P'" :id="{ someProp: pageKey }" />
+    <Item_E v-if="pageId == 'E'" :id="{ someProp: pageKey }" />
     <Item_A v-if="pageId == 'A'" :id="{ someProp: pageKey }" />
 
     <Task_1 v-if="pageId == 'T-1'" :id="{ someProp: pageKey }" />
