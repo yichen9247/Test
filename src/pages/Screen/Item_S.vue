@@ -163,7 +163,7 @@
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['职业素养', '知识结构', '技能水平', '创新能力']
+                data: ['职业素养', '知识结构', '技能水平', '数字素养', '创新能力']
             },
             yAxis: {
                 type: 'value',
@@ -194,7 +194,7 @@
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
                 },
-                data: ['职业素养', '知识结构', '技能水平', '创新能力']
+                data: ['职业素养', '知识结构', '技能水平', '数字素养', '创新能力']
             },
             yAxis: {
                 type: 'value',
@@ -349,6 +349,7 @@
                 let dom2 = document.querySelectorAll(".four-two-input");
                 let dom3 = document.querySelectorAll(".four-three-input");
                 let dom4 = document.querySelectorAll(".four-four-input");
+                let dom5 = document.querySelectorAll(".four-five-input");
 
                 for (let i=0;i<dom1.length;i++) {
                     max1 += Number(dom1[i].value);
@@ -367,6 +368,7 @@
                 data.push(max2/6.0);
                 data.push(max3/6.0);
                 data.push(max4/6.0);
+                data.push(max5/6.0);
                 setEchartsFour(data);
             }
 
@@ -376,6 +378,7 @@
                 let dom2 = document.querySelectorAll(".five-two-input");
                 let dom3 = document.querySelectorAll(".five-three-input");
                 let dom4 = document.querySelectorAll(".five-four-input");
+                let dom5 = document.querySelectorAll(".five-five-input");
 
                 for (let i=0;i<dom1.length;i++) {
                     max1 += Number(dom1[i].value);
@@ -394,6 +397,7 @@
                 data.push(max2/6.0);
                 data.push(max3/6.0);
                 data.push(max4/6.0);
+                data.push(max5/6.0);
                 setEchartsFive(data);
             }
 
@@ -557,9 +561,14 @@
                                 <input class="four-three-input" type="number" :value="0">
                             </template>
                         </el-table-column>
-                        <el-table-column label="创新能力">
+                        <el-table-column label="数字素养">
                             <template #default="scope">
                                 <input class="four-four-input" type="number" :value="0">
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="创新能力">
+                            <template #default="scope">
+                                <input class="four-five-input" type="number" :value="0">
                             </template>
                         </el-table-column>
                     </el-table>
@@ -585,9 +594,14 @@
                                 <input class="five-three-input" type="number" :value="0">
                             </template>
                         </el-table-column>
+                        <el-table-column label="数字素养">
+                            <template #default="scope">
+                                <input class="four-four-input" type="number" :value="0">
+                            </template>
+                        </el-table-column>
                         <el-table-column label="创新能力">
                             <template #default="scope">
-                                <input class="five-four-input" type="number" :value="0">
+                                <input class="five-five-input" type="number" :value="0">
                             </template>
                         </el-table-column>
                     </el-table>
