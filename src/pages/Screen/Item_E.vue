@@ -299,12 +299,12 @@
                     max6 += Number(dom6[i].value);
                 }
 
-                data.push(max1/6.0);
-                data.push(max2/6.0);
-                data.push(max3/6.0);
-                data.push(max4/6.0);
-                data.push(max5/6.0);
-                data.push(max6/6.0);
+                data.push(max1);
+                data.push(max2);
+                data.push(max3);
+                data.push(max4);
+                data.push(max5);
+                data.push(max6);
                 setEchartsOne(data);
             }
 
@@ -336,12 +336,12 @@
                     max6.push(dom6[i].value);
                 }
 
-                data.push(max1/6.0);
-                data.push(max2/6.0);
-                data.push(max3/6.0);
-                data.push(max4/6.0);
-                data.push(max5/6.0);
-                data.push(max6/6.0);
+                data.push(max1);
+                data.push(max2);
+                data.push(max3);
+                data.push(max4);
+                data.push(max5);
+                data.push(max6);
                 setEchartsTwo(data);
             }
 
@@ -373,21 +373,23 @@
                     max6 += Number(dom6[i].value);
                 }
 
-                data.push(max1/6.0);
-                data.push(max2/6.0);
-                data.push(max3/6.0);
-                data.push(max4/6.0);
-                data.push(max5/6.0);
-                data.push(max6/6.0);
+                data.push(max1);
+                data.push(max2);
+                data.push(max3);
+                data.push(max4);
+                data.push(max5);
+                data.push(max6);
                 setEchartsThree(data);
             }
 
             if (id == 4) {
-                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0;
                 let dom1 = document.querySelectorAll(".four-one-input");
                 let dom2 = document.querySelectorAll(".four-two-input");
                 let dom3 = document.querySelectorAll(".four-three-input");
                 let dom4 = document.querySelectorAll(".four-four-input");
+                let dom5 = document.querySelectorAll(".four-five-input");
+                let dom6 = document.querySelectorAll(".four-six-input");
+                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
 
                 for (let i=0;i<dom1.length;i++) {
                     max1 += Number(dom1[i].value);
@@ -401,20 +403,30 @@
                 for (let i=0;i<dom4.length;i++) {
                     max4 += Number(dom4[i].value);
                 }
+                for (let i=0;i<dom5.length;i++) {
+                    max5 += Number(dom5[i].value);
+                }
+                for (let i=0;i<dom6.length;i++) {
+                    max6 += Number(dom6[i].value);
+                }
 
-                data.push(max1/6.0);
-                data.push(max2/6.0);
-                data.push(max3/6.0);
-                data.push(max4/6.0);
+                data.push(max1);
+                data.push(max2);
+                data.push(max3);
+                data.push(max4);
+                data.push(max5);
+                data.push(max6);
                 setEchartsFour(data);
             }
 
             if (id == 5) {
-                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0;
                 let dom1 = document.querySelectorAll(".five-one-input");
                 let dom2 = document.querySelectorAll(".five-two-input");
                 let dom3 = document.querySelectorAll(".five-three-input");
                 let dom4 = document.querySelectorAll(".five-four-input");
+                let dom5 = document.querySelectorAll(".five-five-input");
+                let dom6 = document.querySelectorAll(".five-six-input");
+                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
 
                 for (let i=0;i<dom1.length;i++) {
                     max1 += Number(dom1[i].value);
@@ -428,11 +440,19 @@
                 for (let i=0;i<dom4.length;i++) {
                     max4 += Number(dom4[i].value);
                 }
+                for (let i=0;i<dom5.length;i++) {
+                    max5 += Number(dom5[i].value);
+                }
+                for (let i=0;i<dom6.length;i++) {
+                    max6 += Number(dom6[i].value);
+                }
                 
-                data.push(max1/6.0);
-                data.push(max2/6.0);
-                data.push(max3/6.0);
-                data.push(max4/6.0);
+                data.push(max1);
+                data.push(max2);
+                data.push(max3);
+                data.push(max4);
+                data.push(max5);
+                data.push(max6);
                 setEchartsFive(data);
             }
 
@@ -565,12 +585,12 @@
                         </el-table-column>
                         <el-table-column label="第五组">
                             <template #default="scope">
-                                <input class="three-five-input" type="number" :value="0">
+                                <input class="four-five-input" type="number" :value="0">
                             </template>
                         </el-table-column>
                         <el-table-column label="第六组">
                             <template #default="scope">
-                                <input class="three-six-input" type="number" :value="0">
+                                <input class="five-six-input" type="number" :value="0">
                             </template>
                         </el-table-column>
                     </el-table>
