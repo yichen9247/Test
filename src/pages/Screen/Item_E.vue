@@ -235,7 +235,7 @@
                 data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
-                max: 100,
+                max: 20,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
@@ -459,13 +459,40 @@
             }
 
             if (id == 6) {
-                let data1 = document.querySelector(".six-input-one").value;
-                let data2 = document.querySelector(".six-input-two").value;
+                let dom1 = document.querySelectorAll(".six-one-input");
+                let dom2 = document.querySelectorAll(".six-two-input");
+                let dom3 = document.querySelectorAll(".six-three-input");
+                let dom4 = document.querySelectorAll(".six-four-input");
+                let dom5 = document.querySelectorAll(".six-five-input");
+                let dom6 = document.querySelectorAll(".six-six-input");
+                let data = [],max1 = 0,max2 = 0,max3 = 0,max4 = 0,max5 = 0,max6 = 0;
 
-                startStudent.value = [
-                    { zu: '技能之星', mz: data1 },
-                    { zu: '安全之星', mz: data2 },
-                ]
+                for (let i=0;i<dom1.length;i++) {
+                    max1 += Number(dom1[i].value);
+                }
+                for (let i=0;i<dom2.length;i++) {
+                    max2 += Number(dom2[i].value);
+                }
+                for (let i=0;i<dom3.length;i++) {
+                    max3 += Number(dom3[i].value);
+                }
+                for (let i=0;i<dom4.length;i++) {
+                    max4 += Number(dom4[i].value);
+                }
+                for (let i=0;i<dom5.length;i++) {
+                    max5 += Number(dom5[i].value);
+                }
+                for (let i=0;i<dom6.length;i++) {
+                    max6 += Number(dom6[i].value);
+                }
+                
+                data.push(max1);
+                data.push(max2);
+                data.push(max3);
+                data.push(max4);
+                data.push(max5);
+                data.push(max6);
+                setEchartsSix(data);
             }
         }, 1500);
         ElMessage({type: 'success',message: '保存更改成功！'});
@@ -786,7 +813,8 @@
                     <div class="list-box">
                         <div class="box-head">
                             <img src="../../assets/image/box_title.png" alt="" draggable="false">
-                            <p class="head-title">故障分析</p>
+                            <p class="head-title" v-if="Number(id.someProp) != 7">故障分析</p>
+                            <p class="head-title" v-if="Number(id.someProp) == 7">故障维修</p>
                         </div>
                         <div class="box-body">
                             <img src="../../assets/image/bg02.png" alt="" draggable="false">
