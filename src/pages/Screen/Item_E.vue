@@ -107,7 +107,7 @@
                 data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
-                max: 5,
+                max: 20,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
@@ -139,7 +139,7 @@
                 data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
-                max: 25,
+                max: 35,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
@@ -235,7 +235,7 @@
                 data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
-                max: 25,
+                max: 100,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
