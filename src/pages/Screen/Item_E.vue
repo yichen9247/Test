@@ -627,7 +627,7 @@
                 </div>
             </el-tab-pane>
 
-            <el-tab-pane label="故障分析" name="four">
+            <el-tab-pane :label="Number(id.someProp) != 7 ? '故障分析' : '故障维修'" name="four">
                 <div class="panel-content">
                     <el-table :data="[0]" style="width: 100%">
                         <el-table-column label="第一组">
