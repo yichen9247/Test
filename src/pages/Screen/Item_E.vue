@@ -107,7 +107,7 @@
                 data: ['第一组', '第二组', '第三组', '第四组', '第五组', '第六组']
             },
             yAxis: {
-                max: 20,
+                max: 5,
                 type: 'value',
                 axisLabel: {
                     color: 'rgba(255, 255, 255)'
@@ -336,12 +336,14 @@
                     max6.push(dom6[i].value);
                 }
 
-                data.push(max1);
-                data.push(max2);
-                data.push(max3);
-                data.push(max4);
-                data.push(max5);
-                data.push(max6);
+                console.log(max1)
+
+                data.push(max1[0]);
+                data.push(max2[0]);
+                data.push(max3[0]);
+                data.push(max4[0]);
+                data.push(max5[0]);
+                data.push(max6[0]);
                 setEchartsTwo(data);
             }
 
@@ -585,12 +587,12 @@
                         </el-table-column>
                         <el-table-column label="第五组">
                             <template #default="scope">
-                                <input class="four-five-input" type="number" :value="0">
+                                <input class="three-five-input" type="number" :value="0">
                             </template>
                         </el-table-column>
                         <el-table-column label="第六组">
                             <template #default="scope">
-                                <input class="five-six-input" type="number" :value="0">
+                                <input class="three-six-input" type="number" :value="0">
                             </template>
                         </el-table-column>
                     </el-table>
