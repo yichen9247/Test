@@ -445,9 +445,9 @@ export default [
                 { value: 16, name: '喜欢在线学习' },
                 { value: 18, name: '喜欢团队协作' },
                 { value: 30, name: '喜欢操作' },
-                { value: 28, name: '喜欢驾驶' },
-                { value: 20, name: '场外协定感兴趣' },
-                { value: 22, name: '缺乏驾驶经验' },
+                { value: 28, name: '喜欢游戏学习' },
+                { value: 20, name: '场外标定感兴趣' },
+                { value: 22, name: '没有驾驶经验' },
             ]
         },{
             legend: ['完成湖面建模','完成图片收集'],
