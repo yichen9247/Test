@@ -84,10 +84,6 @@
                 type: 'bar',
                 stack: 'total',
                 barWidth: '60%',
-                label: {
-                    show: true,
-                    formatter: (params) => Math.floor(Math.round(params.value * 1000) / 10) + '%'
-                },
                 data: data[7][1].data[sid].map((d, did) =>
                     totalData[did] <= 0 ? 0 : d / totalData[did]
                 )
@@ -278,7 +274,7 @@
             <div class="box-box box-r">
                 <p class="title">学习特点</p>
                 <div class="charts">
-                    <div class="charts-box box-chart-four"></div>
+                    <div class="charts-box box-chart-four" style="margin-top:13px"></div>
                 </div>
             </div>
         </div>

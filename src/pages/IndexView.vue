@@ -65,14 +65,14 @@
                         <span>学情管理</span>
                     </template>
                     <el-menu-item-group class="item-group">
-                        <el-menu-item index="6-1">预检系统不响应</el-menu-item>
-                        <el-menu-item index="6-2">检测系统故障</el-menu-item>
-                        <el-menu-item index="6-3">检测电路及通讯故障</el-menu-item>
-                        <el-menu-item index="6-4">检测控制器及关联系统</el-menu-item>
-                        <el-menu-item index="6-5">维修电路及通讯故障</el-menu-item>
-                        <el-menu-item index="6-6">维修控制器及关联系统</el-menu-item>
-                        <el-menu-item index="6-7">验证功能正常激活</el-menu-item>
-                        <el-menu-item index="6-8">标定和验证系统</el-menu-item>
+                        <el-menu-item index="6-1">预检IACC系统不响应</el-menu-item>
+                        <el-menu-item index="6-2">检测IACC电路及通讯故障</el-menu-item>
+                        <el-menu-item index="6-3">维修IACC电路及通讯故障</el-menu-item>
+                        <el-menu-item index="6-4">验证IACC功能正常激活</el-menu-item>
+                        <el-menu-item index="6-5">预检IACC系统故障</el-menu-item>
+                        <el-menu-item index="6-6">检测IACC及关联系统</el-menu-item>
+                        <el-menu-item index="6-7">维修IACC及关联系统</el-menu-item>
+                        <el-menu-item index="6-8">标定和验证IACC系统</el-menu-item>
                     </el-menu-item-group>
                 </el-sub-menu>
             </el-menu>
